@@ -5,13 +5,18 @@ import './index.css'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import SearchPage from './SearchPage.jsx'
 import PersonPage from './PersonPage.jsx'
-import ShoppingCardIcon from './ShoppingCardPage.jsx'
-
+import ShoppingCardPage from './ShoppingCardPage/ShoppingCardPage.jsx'
+import HomePage from './HomePage/HomePage.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <div>404 Not Found</div>,
+  },
+  {
+    path:'/homePage',
+    element: <HomePage />,
     errorElement: <div>404 Not Found</div>,
     children: [
       {
@@ -24,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path:'shoppingCardPage',
-        element: <ShoppingCardIcon />
+        element: <ShoppingCardPage />
       }
     ]
   },
