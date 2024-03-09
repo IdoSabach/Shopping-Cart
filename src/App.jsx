@@ -10,7 +10,6 @@ import MenuModal from "./MenuModal";
 export default function App() {
   return (
     <div>
-      {/* <div>sdhfds</div> */}
       <HomePage />
     </div>
   )

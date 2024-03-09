@@ -9,13 +9,13 @@ import ShoppingCardPage from './ShoppingCardPage/ShoppingCardPage.jsx'
 import HomePage from './HomePage/HomePage.jsx'
 
 const router = createBrowserRouter([
+  // {
+  //   path: '/',
+  //   element: <App />,
+  //   errorElement: <div>404 Not Found</div>,
+  // },
   {
-    path: '/',
-    element: <App />,
-    errorElement: <div>404 Not Found</div>,
-  },
-  {
-    path:'/homePage',
+    path:'/',
     element: <HomePage />,
     errorElement: <div>404 Not Found</div>,
     children: [
