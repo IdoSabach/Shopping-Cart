@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom'
-import SearchPage from './SearchPage.jsx'
-import PersonPage from './PersonPage.jsx'
+import ContactPage from './ContactPage/ContactPage.jsx'
 import ShoppingCardPage from './ShoppingCardPage/ShoppingCardPage.jsx'
 import HomePage from './HomePage/HomePage.jsx'
+import ShoppingCardIcon from './ShoppingCardPage/ShoppingCardPage.jsx'
+import About from './AboutPage/About.jsx'
+import HomePageDefault from './HomePageDefault/HomePageDefault.jsx'
 
 const router = createBrowserRouter([
   // {
@@ -20,12 +21,20 @@ const router = createBrowserRouter([
     errorElement: <div>404 Not Found</div>,
     children: [
       {
-        path:'searchPage',
-        element: <SearchPage />,
+        path:'homePageDefault',
+        element: <HomePageDefault />,
       },
       {
-        path:'personPage',
-        element: <PersonPage />
+        path:'shopPage',
+        element: <ShoppingCardIcon />
+      },
+      {
+        path:'ContactPage',
+        element: <ContactPage />
+      },
+      {
+        path:'aboutPage',
+        element: <About />
       },
       {
         path:'shoppingCardPage',

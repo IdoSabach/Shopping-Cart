@@ -1,4 +1,4 @@
-export default function Contact(){
+export default function PersonPage(){
   return(
     <div>
       this contact Page
