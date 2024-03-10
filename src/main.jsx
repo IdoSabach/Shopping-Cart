@@ -5,9 +5,10 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import ContactPage from './ContactPage/ContactPage.jsx'
 import ShoppingCardPage from './ShoppingCardPage/ShoppingCardPage.jsx'
 import HomePage from './HomePage/HomePage.jsx'
-import ShoppingCardIcon from './ShoppingCardPage/ShoppingCardPage.jsx'
 import About from './AboutPage/About.jsx'
 import HomePageDefault from './HomePageDefault/HomePageDefault.jsx'
+import ShopPage from './ShopPage/ShopPage.jsx'
+
 
 const router = createBrowserRouter([
   // {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path:'shopPage',
-        element: <ShoppingCardIcon />
+        element: <ShopPage />
       },
       {
         path:'ContactPage',
