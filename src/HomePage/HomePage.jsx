@@ -7,10 +7,12 @@ import MenuModal from "../MenuModal/MenuModal";
 import HomeIcon from "/images/home.png";
 import ShopIcon from "/images/shop.png";
 import AboutIcon from "/images/about.png";
+import HomePageDefault from "../HomePageDefault/HomePageDefault";
 
 export default function HomePage() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isHome , setIsHome] = useState(true)
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,6 +24,10 @@ export default function HomePage() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const setHomePageClose = () => {
+    setIsHome(false)
+  }
 
   return (
     <div className="App flex flex-col">
@@ -52,9 +58,9 @@ export default function HomePage() {
               <Link to="ContactPage">
                 <img src={PersonIcon} alt="Person" className="w-7 md:w-12" />
               </Link>
-              <Link to="aboutPage">
+              {/* <Link to="aboutPage">
                 <img src={AboutIcon} alt="about" className="w-7 md:w-12" />
-              </Link>
+              </Link> */}
               <Link to="shoppingCardPage">
                 <img
                   src={ShoppingCardIcon}
@@ -64,20 +70,20 @@ export default function HomePage() {
               </Link>
             </div>
           ) : (
-            <div className="icon-block flex flex-row gap-8 items-center text-3xl">
+            <div className="icon-block flex flex-row gap-6 items-center text-3xl">
               <Link to="homePageDefault">
                 <p>Home</p>
               </Link>
-              <Link to="shopPage">
+              <Link to="shopPage" onClick={setHomePageClose}>
                 <p>Shop</p>
               </Link>
-              <Link to="ContactPage">
-                <p>Person</p>
+              <Link to="ContactPage" onClick={setHomePageClose}>
+                <p>Contact Us</p>
               </Link>
-              <Link to="aboutPage">
+              {/* <Link to="aboutPage">
                 <p>About</p>
-              </Link>
-              <Link to="shoppingCardPage">
+              </Link> */}
+              <Link to="shoppingCardPage" onClick={setHomePageClose}>
                 <div className="flex items-center gap-2 bg-slate-700 text-white p-2">
                   <img src={ShoppingCardIcon} alt="ShoppingCard" className="w-7 md:w-9 filter invert"/>
                   <p>Your Card</p>
@@ -87,8 +93,10 @@ export default function HomePage() {
           )}
         </div>
       </header>
-      <MenuModal isOpen={isOpenMenu} closeMenu={() => setIsOpenMenu(false)} />
+      {/* <MenuModal isOpen={isOpenMenu} closeMenu={() => setIsOpenMenu(false)} /> */}
       <Outlet />
+      {/* {isHome ? <HomePageDefault /> : ""} */}
+      
     </div>
   );
 }
