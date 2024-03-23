@@ -17,6 +17,7 @@ export default function HomePageDefault() {
           Shop Now
         </button>
       </section>
+
       <Slider />
 
       <Footer />

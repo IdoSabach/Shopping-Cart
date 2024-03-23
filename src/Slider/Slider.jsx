@@ -1,4 +1,5 @@
 import './slider.css'
+import SlideCard from '../SlideCard/SlideCard'
 
 export default function Slider(){
   return(
@@ -6,33 +7,35 @@ export default function Slider(){
       <div className="slider-track">
 
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/blue.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/moon.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/pink.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/blue.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/moon.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/pink.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/blue.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/moon.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
         <div className="slide">
-          <img className="imag-slide" src="/public/imageSwiper/pink.jpg" alt="" />
+          <SlideCard item={"T-shirt"} type={"sport"}/>
         </div>
-
+        <div className="slide">
+          <SlideCard item={"T-shirt"} type={"sport"}/>
+        </div>
       </div>
     </div>
   )

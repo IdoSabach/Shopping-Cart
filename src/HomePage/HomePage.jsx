@@ -70,7 +70,7 @@ export default function HomePage() {
               </Link>
             </div>
           ) : (
-            <div className="icon-block flex flex-row gap-6 items-center text-3xl">
+            <div className="icon-block flex flex-row gap-10 items-center text-2xl">
               <Link to="homePageDefault">
                 <p>Home</p>
               </Link>
@@ -84,7 +84,7 @@ export default function HomePage() {
                 <p>About</p>
               </Link> */}
               <Link to="shoppingCardPage" onClick={setHomePageClose}>
-                <div className="flex items-center gap-2 bg-slate-700 text-white p-2">
+                <div className="flex items-center gap-2 bg-slate-700 text-white p-2 rounded-xl">
                   <img src={ShoppingCardIcon} alt="ShoppingCard" className="w-7 md:w-9 filter invert"/>
                   <p>Your Card</p>
                 </div>
