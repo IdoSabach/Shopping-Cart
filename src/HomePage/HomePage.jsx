@@ -11,7 +11,7 @@ import HomePageDefault from "../HomePageDefault/HomePageDefault";
 
 export default function HomePage() {
   const [isDesktop, setIsDesktop] = useState(false);
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  // const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isHome , setIsHome] = useState(true)
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="icon-block flex flex-row gap-10 items-center text-2xl">
-              <Link to="homePageDefault">
+              <Link to="homePageDefault" onClick={setHomePageClose}>
                 <p>Home</p>
               </Link>
               <Link to="shopPage" onClick={setHomePageClose}>

@@ -1,7 +1,7 @@
 export default function Footer(){
   return(
-    <div className="main flex flex-col items-center gap-4">
-      <section className="sectionLeft flex gap-6">
+    <div className="main flex flex-col items-center gap-4 mt-16 mb-2">
+      <section className="sectionLeft flex gap-4">
         <nav className="flex gap-1 items-center"><img src="/images/c.png" alt="c" className="w-4 h-4"/>2024 IdoSabach</nav>
         <nav>Terms</nav>
         <nav>Privacy</nav>
