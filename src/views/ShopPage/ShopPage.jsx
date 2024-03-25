@@ -1,5 +1,5 @@
-import Footer from "../Footer/Footer";
-import ProductCard from "../ProductCard/ProductCard.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
+import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 
 const productOne = "/imageSwiper/pink.jpg" 
 const productTwo = "/imageSwiper/blue.jpg"
@@ -19,7 +19,7 @@ export default function ShopPage(){
         <ProductCard image={productThree} title={"Elegant sport shoe"} type={"Sport Men"} price={"159.99$"}/>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

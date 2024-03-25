@@ -1,0 +1,17 @@
+import React from "react";
+import { Routes ,Route } from 'react-router-dom';
+import HomePage from "../../views/HomePage/HomePage";
+import ShopPage from "../../views/ShopPage/ShopPage";
+import ContactPage from "../../views/ContactPage/ContactPage";
+import ShoppingCardPage from "../../views/ShoppingCardPage/ShoppingCardPage";
+
+export default function AppContent() {
+  return (
+    <Routes>
+      <Route exact path="/" element={<HomePage />} />
+      <Route path="/shopPage" element={<ShopPage />} />
+      <Route path="/contactPage" element={<ContactPage />} />
+      <Route path="/shoppingCardPage" element={<ShoppingCardPage />} />
+    </Routes>
+  );
+}

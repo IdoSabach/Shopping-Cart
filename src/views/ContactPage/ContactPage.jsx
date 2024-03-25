@@ -1,4 +1,4 @@
-import Footer from "../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import React, { useState } from 'react';
 
 export default function PersonPage() {
@@ -57,7 +57,7 @@ export default function PersonPage() {
           Send
         </button>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

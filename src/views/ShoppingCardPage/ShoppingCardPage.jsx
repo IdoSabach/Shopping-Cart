@@ -1,4 +1,4 @@
-import Footer from "../Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect } from "react";
 
 const productOne = "/imageSwiper/pink.jpg" 
@@ -74,7 +74,7 @@ export default function ShoppingCardIcon() {
         </section>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
