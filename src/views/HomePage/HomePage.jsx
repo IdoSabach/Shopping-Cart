@@ -2,6 +2,7 @@ import { useState } from "react";
 import Footer from "../../components/Footer/Footer.jsx";
 import Slider from "../../components/Slider/Slider.jsx";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
+import SwiperApp from "../../components/Swiper/SwiperApp.jsx";
 
 const productOne = "/imageSwiper/pink.jpg" 
 const productTwo = "/imageSwiper/blue.jpg"
@@ -24,7 +25,7 @@ export default function HomePageDefault() {
         </button>
       </section>
 
-      <Slider />
+      <SwiperApp />
 
       <section className="text font-bold text-3xl mb-9">Crazy discounts for the opening of the store!</section>
 
@@ -37,6 +38,8 @@ export default function HomePageDefault() {
         <ProductCard image={productTwo} title={"Elegant sport shoe"} type={"Sport Men"} price={"159.99$"}/>
         <ProductCard image={productThree} title={"Elegant sport shoe"} type={"Sport Men"} price={"159.99$"}/>
       </section>
+
+      <Slider />
 
       {/* <Footer /> */}
     </div>

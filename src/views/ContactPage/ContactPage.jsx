@@ -21,12 +21,12 @@ export default function PersonPage() {
   }
   return (
     <div className="contact flex flex-col items-center">
-      <section className="input mt-8 p-4 flex flex-col gap-6 items-center">
+      <section className="input mt-8 p-4 flex flex-col gap-6 items-center lg:text-2xl">
         <div className="title text-3xl text-center ">
           We are here for you for anything, write to us!
         </div>
 
-        <div className="input flex flex-col w-3/4">
+        <div className="input flex flex-col w-3/4 ">
           <label htmlFor="textInput"></label>
           <input
             type="text"
@@ -34,7 +34,7 @@ export default function PersonPage() {
             placeholder="Your Name"
             value={name}
             onChange={handleName}
-            className="border border-black rounded-2xl p-1"
+            className="border border-black rounded-2xl p-1 "
           />
         </div>
 

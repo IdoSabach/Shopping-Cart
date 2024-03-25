@@ -43,17 +43,17 @@ export default function ShoppingCardIcon() {
 
   return (
     <div className="titleOfPage flex flex-col items-center">
-      <div className="titleOfPage text-5xl  mt-4 mb-4">Your Items</div>
+      <div className="titleOfPage text-5xl mt-4 mb-4">Your Items</div>
 
-      <div className="main lg:flex gap-8">
+      <div className="main lg:flex">
         <div>
           {Items.map((item, index) => (
             <section
               key={index}
-              className="item flex flex-col lg:flex-row m-2"
+              className="item flex flex-col lg:flex-row m-8 gap-8"
             >
               <div>
-                <img src={item.image} alt="" className="image w-80 lg:w-60" />
+                <img src={item.image} alt="" className="image w-80 lg:w-60 rounded-xl" />
               </div>
               <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
                 <div className="title font-bold">{item.title}</div>
