@@ -33,7 +33,7 @@ export default function SwiperApp() {
     <>
       <Swiper
         slidesPerView={2}
-        spaceBetween={30}
+        spaceBetween={10}
         centeredSlides={true}
         loop={true}
         autoplay={{

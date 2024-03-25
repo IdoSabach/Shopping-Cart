@@ -1,24 +1,28 @@
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect } from "react";
 
-const productOne = "/imageSwiper/pink.jpg" 
-const productTwo = "/imageSwiper/blue.jpg"
-const productThree = "/imageSwiper/moon.jpg"
+const productOne = "/imageSwiper/pink.jpg";
+const productTwo = "/imageSwiper/blue.jpg";
+const productThree = "/imageSwiper/moon.jpg";
 
 const Items = [
   {
+    id: 1,
     image: productOne,
     title: "Elegant sport shoe",
     type: "Sport Men",
     price: 159.99,
   },
   {
+    id: 2,
     image: productTwo,
     title: "Elegant sport shoe",
     type: "Sport Men",
     price: 159.99,
   },
   {
+    id: 3,
     image: productThree,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -48,19 +52,25 @@ export default function ShoppingCardIcon() {
       <div className="main lg:flex">
         <div>
           {Items.map((item, index) => (
-            <section
-              key={index}
-              className="item flex flex-col lg:flex-row m-8 gap-8"
-            >
-              <div>
-                <img src={item.image} alt="" className="image w-80 lg:w-60 rounded-xl" />
-              </div>
-              <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
-                <div className="title font-bold">{item.title}</div>
-                <div className="type ">{item.type}</div>
-                <div className="price font-bold">{item.price}</div>
-              </div>
-            </section>
+            <Link key={index} to={`/item/${index}`}>
+              <section
+                key={index}
+                className="item flex flex-col lg:flex-row m-8 gap-8"
+              >
+                <div>
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="image w-80 lg:w-60 rounded-xl"
+                  />
+                </div>
+                <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
+                  <div className="title font-bold">{item.title}</div>
+                  <div className="type ">{item.type}</div>
+                  <div className="price font-bold">{item.price}</div>
+                </div>
+              </section>
+            </Link>
           ))}
         </div>
 
@@ -70,7 +80,9 @@ export default function ShoppingCardIcon() {
             <div>Items: {items}</div>
             <div>Price: {price}</div>
           </div>
-          <button className="btn bg-green-400 text-xl p-1 rounded-xl active:scale-95">Checkout</button>
+          <button className="btn bg-green-400 text-xl p-1 rounded-xl active:scale-95">
+            Checkout
+          </button>
         </section>
       </div>
 
