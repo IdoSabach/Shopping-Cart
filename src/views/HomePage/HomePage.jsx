@@ -11,7 +11,7 @@ const productThree = "/imageSwiper/moon.jpg"
 export default function HomePageDefault() {
   return (
 
-    <div className="homePageDefault flex flex-col items-center gap-3 p-4 text-center">
+    <div className="homePageDefault flex flex-col items-center gap-3 text-center">
 
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
         <header className="text-xl border-black rounded-3xl p-1 pr-4 pl-4 bg-slate-300 md:text-3xl">
