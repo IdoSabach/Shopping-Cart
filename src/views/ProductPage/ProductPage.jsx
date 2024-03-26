@@ -7,7 +7,7 @@ const ProductPage = () => {
   const { id } = useParams();
   const product = Items.find((item) => item.id === parseInt(id));
 
-  const { addToCart, cart } = useCartStore();
+  const { addToCart } = useCartStore();
 
   if (!product) {
     return <div>Product not found</div>;
@@ -37,7 +37,7 @@ const ProductPage = () => {
           ))}
         </ul>
       </div>
-      <button className="btn text-white bg-black text-2xl p-2 rounded-xl mt-4 active:scale-95" onClick={handleAddToCart}>Add to Bag</button>
+      <button className="btn text-white bg-black text-2xl p-2 rounded-xl mt-4 active:scale-95" onClick={handleAddToCart}>Add to Cart</button>
       
     </div>
   );

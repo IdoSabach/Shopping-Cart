@@ -7,6 +7,7 @@ import Items from "../../data/Items.js";
 
 export default function HomePage() {
   const displayedItems = Items.slice(0, 6);
+  let i = 0;
   return (
     <div className="homePageDefault flex flex-col items-center gap-3 text-center">
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
@@ -16,7 +17,10 @@ export default function HomePage() {
         <nav className="subHeader text-2xl md:text-4xl">
           Lorem ipsum dolor sit amet consectetur.
         </nav>
-        <Link to="/shopPage" className="btn-shop p-3 text-lg bg-slate-700 text-white rounded-3xl md:text-x active:scale-95">
+        <Link
+          to="/shopPage"
+          className="btn-shop p-3 text-lg bg-slate-700 text-white rounded-3xl md:text-x active:scale-95"
+        >
           Shop Now
         </Link>
       </section>
@@ -29,19 +33,15 @@ export default function HomePage() {
 
       <section className="sectionPro grid gap-6 lg:grid-cols-3 p-4">
         {displayedItems.map((item, index) => (
-          <Link key={index} to={`/item/${index}`}>
-            <section
-              key={index}
-              className="item flex flex-col lg:flex-row gap-6"
-            >
-              <ProductCard
-                image={item.image}
-                title={item.title}
-                type={item.type}
-                price={`$${item.price}`}
-              />
-            </section>
-          </Link>
+          <section key={index} className="item flex flex-col lg:flex-row gap-6">
+            <ProductCard
+              id={i++}
+              image={item.image}
+              title={item.title}
+              type={item.type}
+              price={`$${item.price}`}
+            />
+          </section>
         ))}
       </section>
 

@@ -65,7 +65,7 @@ export default function ShoppingCardIcon() {
                 <img
                   src={item.image}
                   alt=""
-                  className="image w-80 lg:w-60 rounded-xl"
+                  className="image lg:w-80 rounded-xl"
                 />
               </div>
               <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
@@ -81,7 +81,7 @@ export default function ShoppingCardIcon() {
           <div className="text text-3xl font-bold">Order summary</div>
           <div className="sum flex gap-8 items-center text-2xl">
             <div>Items: {items}</div>
-            <div>Price: {`$${price}`}</div>
+            {/* <div>Price: {`$${price}`}</div> */}
           </div>
           <button className="btn bg-green-400 text-xl p-1 rounded-xl active:scale-95">
             Checkout
