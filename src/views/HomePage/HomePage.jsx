@@ -16,9 +16,9 @@ export default function HomePage() {
         <nav className="subHeader text-2xl md:text-4xl">
           Lorem ipsum dolor sit amet consectetur.
         </nav>
-        <button className="btn-shop p-3 text-lg bg-slate-700 text-white rounded-3xl md:text-x active:scale-95">
+        <Link to="/shopPage" className="btn-shop p-3 text-lg bg-slate-700 text-white rounded-3xl md:text-x active:scale-95">
           Shop Now
-        </button>
+        </Link>
       </section>
 
       <SwiperApp />
@@ -38,7 +38,7 @@ export default function HomePage() {
                 image={item.image}
                 title={item.title}
                 type={item.type}
-                price={`${item.price}$`}
+                price={`$${item.price}`}
               />
             </section>
           </Link>

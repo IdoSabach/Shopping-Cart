@@ -1,28 +1,26 @@
-import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect } from "react";
 
 const productOne = "/imageSwiper/pink.jpg";
 const productTwo = "/imageSwiper/blue.jpg";
 const productThree = "/imageSwiper/moon.jpg";
 
-const Items = [
+const ItemsForBag = [
   {
-    id: 1,
+    id: 0,
     image: productOne,
     title: "Elegant sport shoe",
     type: "Sport Men",
     price: 159.99,
   },
   {
-    id: 2,
+    id: 1,
     image: productTwo,
     title: "Elegant sport shoe",
     type: "Sport Men",
     price: 159.99,
   },
   {
-    id: 3,
+    id: 2,
     image: productThree,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -37,13 +35,13 @@ export default function ShoppingCardIcon() {
   useEffect(() => {
     let items = 0;
     let price = 0;
-    for (let i = 0; i < Items.length; i++) {
+    for (let i = 0; i < ItemsForBag.length; i++) {
       items++;
-      price += Items[i].price;
+      price += ItemsForBag[i].price;
     }
-    setPrice(items);
-    setItems(price);
-  }, [Items]);
+    setPrice(price);
+    setItems(items);
+  }, [ItemsForBag]);
 
   return (
     <div className="titleOfPage flex flex-col items-center">
@@ -51,7 +49,7 @@ export default function ShoppingCardIcon() {
 
       <div className="main lg:flex">
         <div>
-          {Items.map((item, index) => (
+          {ItemsForBag.map((item, index) => (
             
               <section
                 key={index}
@@ -77,7 +75,7 @@ export default function ShoppingCardIcon() {
           <div className="text text-3xl font-bold">Order summary</div>
           <div className="sum flex gap-8 items-center text-2xl">
             <div>Items: {items}</div>
-            <div>Price: {price}</div>
+            <div>Price: {`$${price}`}</div>
           </div>
           <button className="btn bg-green-400 text-xl p-1 rounded-xl active:scale-95">
             Checkout
@@ -85,7 +83,6 @@ export default function ShoppingCardIcon() {
         </section>
       </div>
 
-      {/* <Footer /> */}
     </div>
   );
 }

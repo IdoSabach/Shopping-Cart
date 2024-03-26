@@ -18,7 +18,7 @@ export default function ShopPage() {
                 image={item.image}
                 title={item.title}
                 type={item.type}
-                price={`${item.price}$`}
+                price={`$${item.price}`}
               />
             </section>
           </Link>

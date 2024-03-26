@@ -4,7 +4,7 @@ const productThree = "/imageSwiper/moon.jpg";
 
 const Items = [
   {
-    id: 1,
+    id: 0,
     image: productOne,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -13,7 +13,7 @@ const Items = [
     features: ["Comfortable fit", "Durable material", "Stylish design"],
   },
   {
-    id: 2,
+    id: 1,
     image: productTwo,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -22,7 +22,7 @@ const Items = [
     features: ["Comfortable fit", "Durable material", "Stylish design"],
   },
   {
-    id: 3,
+    id: 2,
     image: productThree,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -31,7 +31,7 @@ const Items = [
     features: ["Comfortable fit", "Durable material", "Stylish design"],
   },
   {
-    id: 4,
+    id: 3,
     image: productOne,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -40,7 +40,7 @@ const Items = [
     features: ["Comfortable fit", "Durable material", "Stylish design"],
   },
   {
-    id: 5,
+    id: 4,
     image: productTwo,
     title: "Elegant sport shoe",
     type: "Sport Men",
@@ -49,7 +49,7 @@ const Items = [
     features: ["Comfortable fit", "Durable material", "Stylish design"],
   },
   {
-    id: 6,
+    id: 5,
     image: productThree,
     title: "Elegant sport shoe",
     type: "Sport Men",
