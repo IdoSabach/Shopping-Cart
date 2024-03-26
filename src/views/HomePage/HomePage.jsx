@@ -6,7 +6,7 @@ import SwiperApp from "../../components/Swiper/SwiperApp.jsx";
 import Items from "../../data/Items.js";
 
 export default function HomePage() {
-  const displayedItems = Items.slice(0, 3);
+  const displayedItems = Items.slice(0, 6);
   return (
     <div className="homePageDefault flex flex-col items-center gap-3 text-center">
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">

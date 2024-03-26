@@ -1,47 +1,54 @@
 import React, { useState, useEffect } from "react";
+import useCartStore from "../../store/CardStore.jsx";
 
 const productOne = "/imageSwiper/pink.jpg";
 const productTwo = "/imageSwiper/blue.jpg";
 const productThree = "/imageSwiper/moon.jpg";
 
-const ItemsForBag = [
-  {
-    id: 0,
-    image: productOne,
-    title: "Elegant sport shoe",
-    type: "Sport Men",
-    price: 159.99,
-  },
-  {
-    id: 1,
-    image: productTwo,
-    title: "Elegant sport shoe",
-    type: "Sport Men",
-    price: 159.99,
-  },
-  {
-    id: 2,
-    image: productThree,
-    title: "Elegant sport shoe",
-    type: "Sport Men",
-    price: 159.99,
-  },
-];
+// const ItemsForBag = [
+//   {
+//     id: 0,
+//     image: productOne,
+//     title: "Elegant sport shoe",
+//     type: "Sport Men",
+//     price: 159.99,
+//   },
+//   {
+//     id: 1,
+//     image: productTwo,
+//     title: "Elegant sport shoe",
+//     type: "Sport Men",
+//     price: 159.99,
+//   },
+//   {
+//     id: 2,
+//     image: productThree,
+//     title: "Elegant sport shoe",
+//     type: "Sport Men",
+//     price: 159.99,
+//   },
+// ];
 
 export default function ShoppingCardIcon() {
   const [price, setPrice] = useState(0);
   const [items, setItems] = useState(0);
 
+  const { cart } = useCartStore();
+  
+  const { clearCart } = useCartStore((state) => ({
+    clearCart: state.clearCart
+  }));
+
   useEffect(() => {
     let items = 0;
     let price = 0;
-    for (let i = 0; i < ItemsForBag.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
       items++;
-      price += ItemsForBag[i].price;
+      price += cart[i].price;
     }
     setPrice(price);
     setItems(items);
-  }, [ItemsForBag]);
+  }, [cart]);
 
   return (
     <div className="titleOfPage flex flex-col items-center">
@@ -49,25 +56,24 @@ export default function ShoppingCardIcon() {
 
       <div className="main lg:flex">
         <div>
-          {ItemsForBag.map((item, index) => (
-            
-              <section
-                key={index}
-                className="item flex flex-col lg:flex-row m-8 gap-8"
-              >
-                <div>
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="image w-80 lg:w-60 rounded-xl"
-                  />
-                </div>
-                <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
-                  <div className="title font-bold">{item.title}</div>
-                  <div className="type ">{item.type}</div>
-                  <div className="price font-bold">{item.price}</div>
-                </div>
-              </section>
+          {cart.map((item, index) => (
+            <section
+              key={index}
+              className="item flex flex-col lg:flex-row m-8 gap-8"
+            >
+              <div>
+                <img
+                  src={item.image}
+                  alt=""
+                  className="image w-80 lg:w-60 rounded-xl"
+                />
+              </div>
+              <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
+                <div className="title font-bold">{item.title}</div>
+                <div className="type ">{item.type}</div>
+                <div className="price font-bold">{item.price}</div>
+              </div>
+            </section>
           ))}
         </div>
 
@@ -80,9 +86,11 @@ export default function ShoppingCardIcon() {
           <button className="btn bg-green-400 text-xl p-1 rounded-xl active:scale-95">
             Checkout
           </button>
+          <button className="btn bg-black text-white text-xl p-1 rounded-xl active:scale-95" onClick={clearCart}>
+            Remove All
+          </button>
         </section>
       </div>
-
     </div>
   );
 }

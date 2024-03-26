@@ -65,7 +65,7 @@ export default function NavBar() {
                     alt="ShoppingCard"
                     className="w-7 md:w-9 filter invert"
                   />
-                  <p>Your Card</p>
+                  <p>Your Bag</p>
                 </div>
               </Link>
             </div>
