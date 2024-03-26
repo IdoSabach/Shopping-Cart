@@ -32,7 +32,7 @@ export default function SwiperApp() {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1.5}
         spaceBetween={10}
         centeredSlides={true}
         loop={true}

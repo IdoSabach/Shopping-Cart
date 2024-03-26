@@ -24,7 +24,7 @@ export default function NavBar() {
     <div>
       <header className="header flex p-4 justify-between items-center">
         <Link to="/">
-          <div className="logo-block md:text-4xl">Ido Sabach</div>
+          <div className="logo-block text-2xl lg:text-4xl">Lorem ipsum.</div>
         </Link>
 
         <div>

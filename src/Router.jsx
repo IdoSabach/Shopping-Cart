@@ -3,6 +3,7 @@ import ShopPage from "./views/ShopPage/ShopPage"
 import ContactPage from "./views/ContactPage/ContactPage"
 import ShoppingCardPage from "./views/ShoppingCardPage/ShoppingCardPage"
 import HomePage from "./views/HomePage/HomePage";
+import ProductPage from "./views/ProductPage/ProductPage";
 
 
 const Router = () => {
@@ -13,18 +14,21 @@ const Router = () => {
       errorElement: <div>404 Not Found</div>,
     },
     {
-      path:'shopPage',
+      path:'/shopPage',
       element: <ShopPage />
     },
     {
-      path:'ContactPage',
+      path:'/ContactPage',
       element: <ContactPage />
     },
     {
-      path:'shoppingCardPage',
+      path:'/shoppingCardPage',
       element: <ShoppingCardPage />
-    }
-
+    },
+    {
+      path: '/item/:id',
+      element: <ProductPage />
+    },
   ]);
 
   return <RouterProvider router={router} />;

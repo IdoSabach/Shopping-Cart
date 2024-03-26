@@ -52,7 +52,7 @@ export default function ShoppingCardIcon() {
       <div className="main lg:flex">
         <div>
           {Items.map((item, index) => (
-            <Link key={index} to={`/item/${index}`}>
+            
               <section
                 key={index}
                 className="item flex flex-col lg:flex-row m-8 gap-8"
@@ -70,7 +70,6 @@ export default function ShoppingCardIcon() {
                   <div className="price font-bold">{item.price}</div>
                 </div>
               </section>
-            </Link>
           ))}
         </div>
 
