@@ -27,7 +27,7 @@ export default function HomePage() {
 
       <SwiperApp />
 
-      <section className="text font-bold text-3xl mb-9">
+      <section className="text font-bold text-3xl mb-4 mt-4">
         Lorem ipsum dolor, sit amet consectetur adipisicing.
       </section>
 
@@ -43,6 +43,15 @@ export default function HomePage() {
             />
           </section>
         ))}
+        
+      </section>
+      <section className="mt-8">
+      <Link
+          to="/shopPage"
+          className="btn-shop p-4 text-2xl bg-slate-700 text-white rounded-3xl md:text-x active:scale-95"
+        >
+          Shop Now
+        </Link>
       </section>
 
       <Slider />

@@ -27,10 +27,10 @@ export default function ShoppingCardIcon() {
   return (
     <div className="titleOfPage flex flex-col items-center">
       {cart.length === 0 ? (
-        <section className="text-4xl p-4">
-          Your cart is empty go to the{" "}
+        <section className="text-4xl p-4 flex flex-col text-center gap-4">
+          YOUR CART IS LOOKING EMPTY
           <Link to="/shopPage" className="font-bold">
-            store!
+          SHOP NOW
           </Link>
         </section>
       ) : (
