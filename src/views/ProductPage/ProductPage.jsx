@@ -15,7 +15,7 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     addToCart(product);
-    alert("Product added to cart!");
+    // alert("Product added to cart!");
   };
 
   return (
@@ -27,7 +27,7 @@ const ProductPage = () => {
       </div>
 
       <div className="product-image mt-4 mb-4 flex justify-center">
-        <img src={product.image} alt={product.title} className="rounded-xl lg:w-3/4"/>
+        <img src={product.image} alt={product.title} className="rounded-xl h-96 w-96 object-cover"/>
       </div>
       <div className="product-details">
         <p>Description: {product.description}</p>

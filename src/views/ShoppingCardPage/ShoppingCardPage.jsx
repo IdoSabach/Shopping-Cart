@@ -1,43 +1,17 @@
 import React, { useState, useEffect } from "react";
 import useCartStore from "../../store/CardStore.jsx";
-
-const productOne = "/imageSwiper/pink.jpg";
-const productTwo = "/imageSwiper/blue.jpg";
-const productThree = "/imageSwiper/moon.jpg";
-
-// const ItemsForBag = [
-//   {
-//     id: 0,
-//     image: productOne,
-//     title: "Elegant sport shoe",
-//     type: "Sport Men",
-//     price: 159.99,
-//   },
-//   {
-//     id: 1,
-//     image: productTwo,
-//     title: "Elegant sport shoe",
-//     type: "Sport Men",
-//     price: 159.99,
-//   },
-//   {
-//     id: 2,
-//     image: productThree,
-//     title: "Elegant sport shoe",
-//     type: "Sport Men",
-//     price: 159.99,
-//   },
-// ];
+import ProductInCard from "../../components/ProductInCard/ProductInCard.jsx";
+import { Link } from "react-router-dom";
 
 export default function ShoppingCardIcon() {
   const [price, setPrice] = useState(0);
   const [items, setItems] = useState(0);
 
   const { cart } = useCartStore();
-  
-  const { clearCart } = useCartStore((state) => ({
-    clearCart: state.clearCart
-  }));
+
+  // const { clearCart } = useCartStore((state) => ({
+  //   clearCart: state.clearCart,
+  // }));
 
   useEffect(() => {
     let items = 0;
@@ -52,43 +26,42 @@ export default function ShoppingCardIcon() {
 
   return (
     <div className="titleOfPage flex flex-col items-center">
-      <div className="titleOfPage text-5xl mt-4 mb-4">Your Items</div>
+      {cart.length === 0 ? (
+        <section className="text-4xl p-4">
+          Your cart is empty go to the{" "}
+          <Link to="/shopPage" className="font-bold">
+            store!
+          </Link>
+        </section>
+      ) : (
+        <div className="titleOfPage text-5xl mt-4">Your Items</div>
+      )}
 
       <div className="main lg:flex">
         <div>
           {cart.map((item, index) => (
-            <section
+            <ProductInCard
+              image={item.image}
+              title={item.title}
+              price={item.price}
               key={index}
-              className="item flex flex-col lg:flex-row m-8 gap-8"
-            >
-              <div>
-                <img
-                  src={item.image}
-                  alt=""
-                  className="image lg:w-80 rounded-xl"
-                />
-              </div>
-              <div className="text text-2xl lg:text-2xl flex flex-col gap-2 lg:gap-2">
-                <div className="title font-bold">{item.title}</div>
-                <div className="type ">{item.type}</div>
-                <div className="price font-bold">{item.price}</div>
-              </div>
-            </section>
+              id={item.id}
+            />
           ))}
         </div>
 
-        <section className="sum flex flex-col items-center border gap-4 p-4">
-          <div className="text text-3xl font-bold">Order summary</div>
-          <div className="sum flex gap-8 items-center text-2xl">
-            <div>Items: {items}</div>
-            {/* <div>Price: {`$${price}`}</div> */}
+        <section className="sum flex items-center gap-4 p-4 fixed bottom-0 left-0 right-0 bg-black text-white justify-center">
+          {/* <div className="text text-3xl font-bold">Order summary</div> */}
+          <div className="sum flex gap-8 text-2xl">
+            {/* <div>Items: {items}</div> */}
+            <div>Price: {`$${price.toFixed(2)}`}</div>
           </div>
-          <button className="btn bg-green-400 text-xl p-1 rounded-xl active:scale-95">
+          <button className="btn bg-green-400 text-2xl p-2 rounded-xl active:scale-95 ml-8">
             Checkout
           </button>
-          <button className="btn bg-black text-white text-xl p-1 rounded-xl active:scale-95" onClick={clearCart}>
+          {/* <button className="btn bg-black text-white text-2xl p-2 rounded-xl active:scale-95" onClick={clearCart}>
             Remove All
-          </button>
+          </button> */}
         </section>
       </div>
     </div>

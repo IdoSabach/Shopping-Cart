@@ -4,17 +4,18 @@ import { useParams } from "react-router-dom";
 
 export default function ProductCard({ image, title, type, price, id }) {
   const product = { id, image, title, type, price };
+
   const { addToCart} = useCartStore();
 
   const handleAddToCart = () => {
     addToCart(product);
-    alert("Product added to cart!");
+    // alert("Product added to cart!");
   };
 
   return (
-    <div className="allCard text-left ">
+    <div className="allCard text-left p-4 shadow-xl rounded-xl">
       <Link key={id} to={`/item/${id}`}>
-        <img src={image} alt="image" className="image rounded-xl" />
+        <img src={image} alt="image" className="image rounded-xl h-96 w-96 object-cover" />
       </Link>
 
       <div className="flex justify-between items-center p-2">
@@ -24,9 +25,9 @@ export default function ProductCard({ image, title, type, price, id }) {
           <div className="price font-bold">{price}</div>
         </div>
         <div>
-          <button className="btn text-2xl p-2 bg-green-500 text-black font-bold rounded-xl" onClick={handleAddToCart}>
+          {/* <button className="btn text-2xl p-2 bg-green-500 text-black font-bold rounded-xl" onClick={handleAddToCart}>
             Add To Cart
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
