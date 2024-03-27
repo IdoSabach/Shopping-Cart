@@ -1,42 +1,28 @@
-import './slider.css'
-import SlideCard from '../SlideCard/SlideCard'
+import "./slider.css";
+import SlideCard from "../SlideCard/SlideCard";
 
-export default function Slider(){
-  return(
+const arrImage = [
+  "/shoes/shoe1.jpg",
+  "/shoes/shoe2.jpg",
+  "/shirts/shirt2.jpg",
+  "/shoes/shoe3.jpg",
+  "/shoes/shoe4.jpg",
+  "/shirts/shirt3.jpg",
+  "/shoes/shoe5.jpg",
+  "/shoes/shoeRed.jpg",
+  "/shirts/shirt1.jpg",
+];
+
+export default function Slider() {
+  return (
     <div className="slider">
       <div className="slider-track">
-
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
-        <div className="slide">
-          <SlideCard item={"T-shirt"} type={"sport"}/>
-        </div>
+        {arrImage.map((item, index) => (
+          <div className="slide">
+            <SlideCard key={index} image={item} />
+          </div>
+        ))}
       </div>
     </div>
-  )
+  );
 }
