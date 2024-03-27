@@ -18,8 +18,8 @@ export default function Slider() {
     <div className="slider">
       <div className="slider-track">
         {arrImage.map((item, index) => (
-          <div className="slide">
-            <SlideCard key={index} image={item} />
+          <div key={index} className="slide">
+            <SlideCard image={item} />
           </div>
         ))}
       </div>

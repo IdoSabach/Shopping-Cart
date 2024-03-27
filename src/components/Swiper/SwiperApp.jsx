@@ -9,12 +9,6 @@ import "swiper/css/navigation";
 
 import "./Swiper.css";
 
-// const shoe1 = "/shoes/shoe1.jpg";
-// const shoe2 = "/shoes/shoe2.jpg";
-// const shoe3 = "/shoes/shoe3.jpg";
-// const shoe4 = "/shoes/shoe4.jpg";
-// const shoe5 = "/shoes/shoe5.jpg";
-// const shoeRed = "/shoes/shoeRed.jpg";
 
 const arrImage = [
   "/shoes/shoe1.jpg",
