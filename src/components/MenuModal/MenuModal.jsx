@@ -4,21 +4,10 @@ import ProductInCard from "../../components/ProductInCard/ProductInCard.jsx";
 import { Link } from "react-router-dom";
 
 export default function MenuModal({ isOpen, closeMenu }) {
-  const [price, setPrice] = useState(0);
-  const [items, setItems] = useState(0);
-
   const { cart } = useCartStore();
 
-  useEffect(() => {
-    let items = 0;
-    let price = 0;
-    for (let i = 0; i < cart.length; i++) {
-      items++;
-      price += cart[i].price;
-    }
-    setPrice(price);
-    setItems(items);
-  }, [cart]);
+  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
     if (isOpen) {
@@ -57,18 +46,15 @@ export default function MenuModal({ isOpen, closeMenu }) {
               <div className="overflow-y-auto max-h-60vh">
                 {cart.map((item, index) => (
                   <ProductInCard
-                    image={item.image}
-                    title={item.title}
-                    price={item.price}
+                    {...item}
                     key={index}
-                    id={item.id}
                   />
                 ))}
               </div>
               <section className="sum flex items-center gap-4 p-4 bg-white text-black justify-between w-full absolute bottom-0">
                 <div className="sum flex gap-8 text-2xl">
-                  <div>Items: {items}</div>
-                  <div>Total: {`$${price.toFixed(2)}`}</div>
+                  <div>Items: {totalItems}</div>
+                  <div>Total: {`$${totalPrice.toFixed(2)}`}</div>
                 </div>
                 <button className="btn bg-green-400 text-2xl p-2 rounded-xl active:scale-95 ml-8">
                   Checkout
