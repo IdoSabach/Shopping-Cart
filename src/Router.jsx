@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ShopPage from "./views/ShopPage/ShopPage"
 import ContactPage from "./views/ContactPage/ContactPage"
-import ShoppingCardPage from "./views/ShoppingCardPage/ShoppingCardPage"
+// import ShoppingCardPage from "./views/ShoppingCardPage/ShoppingCardPage"
 import HomePage from "./views/HomePage/HomePage";
 import ProductPage from "./views/ProductPage/ProductPage";
 
@@ -21,10 +21,10 @@ const Router = () => {
       path:'/ContactPage',
       element: <ContactPage />
     },
-    {
-      path:'/shoppingCardPage',
-      element: <ShoppingCardPage />
-    },
+    // {
+    //   path:'/shoppingCardPage',
+    //   element: <ShoppingCardPage />
+    // },
     {
       path: '/item/:id',
       element: <ProductPage />

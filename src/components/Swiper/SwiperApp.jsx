@@ -60,7 +60,7 @@ export default function SwiperApp() {
         >
           {arrImage.map((shoe, index) => (
             <SwiperSlide key={index}>
-              <img src={shoe} alt="" className="image h-96 w-96 object-cover" />
+              <img src={shoe} alt="" className="image h-96 w-96 object-cover rounded-xl" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -83,7 +83,7 @@ export default function SwiperApp() {
         >
           {arrImage.map((shoe, index) => (
             <SwiperSlide key={index}>
-              <img src={shoe} alt="" className="image h-96 w-96 object-cover" />
+              <img src={shoe} alt="" className="image h-96 w-96 object-cover rounded-xl" />
             </SwiperSlide>
           ))}
         </Swiper>

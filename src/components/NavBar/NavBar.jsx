@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import MenuModal from "../../components/MenuModal/MenuModal.jsx";
 
 import PersonIcon from "/images/person.png";
 import ShoppingCardIcon from "/images/shopping-bag.png";
 import HomeIcon from "/images/home.png";
 import ShopIcon from "/images/shop.png";
 
-export default function NavBar() {
+export default function NavBar( { isOpen }) {
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isCardOpen , setIdCardOpen] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,6 +21,11 @@ export default function NavBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleCardOpen = () => {
+    setIdCardOpen(true)
+    isOpen(isCardOpen)
+  }
 
   return (
     <div>
@@ -39,13 +46,13 @@ export default function NavBar() {
               <Link to="ContactPage">
                 <img src={PersonIcon} alt="Person" className="w-7 md:w-12" />
               </Link>
-              <Link to="shoppingCardPage">
+              <button onClick={handleCardOpen}>
                 <img
                   src={ShoppingCardIcon}
                   alt="ShoppingCard"
                   className="w-7 md:w-12"
                 />
-              </Link>
+              </button>
             </div>
           ) : (
             <div className="icon-block flex flex-row gap-10 items-center text-2xl">
@@ -58,7 +65,7 @@ export default function NavBar() {
               <Link to="ContactPage">
                 <p>Contact Us</p>
               </Link>
-              <Link to="shoppingCardPage">
+              <button onClick={handleCardOpen}>
                 <div className="flex items-center gap-2 bg-slate-700 text-white p-2 rounded-xl">
                   <img
                     src={ShoppingCardIcon}
@@ -67,7 +74,7 @@ export default function NavBar() {
                   />
                   <p>Your Bag</p>
                 </div>
-              </Link>
+              </button>
             </div>
           )}
         </div>

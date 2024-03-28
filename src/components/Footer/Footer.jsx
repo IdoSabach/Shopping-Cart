@@ -34,7 +34,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="main flex flex-col w-full p-8 lg:p-24 lg:pb-2 lg:pt-8 bg-black text-white text-sm mt-16 gap-16">
+    <div className="main flex flex-col w-full p-8 lg:p-24 lg:pb-2 lg:pt-8 bg-black text-white text-sm gap-16 mt-16">
       <section className="subFooter flex flex-col lg:flex-row justify-between">
         <div className="flex gap-8 lg:gap-32 flex-col lg:flex-row mb-8 lg:mb-0">
           <div className="flex flex-col gap-3 font-bold text-white">
