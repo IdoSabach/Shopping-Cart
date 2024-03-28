@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useCartStore from "../../store/CardStore";
 
 const trashIcon = "/images/icons8-trash-can-50.png";
@@ -6,21 +6,20 @@ const trashIcon = "/images/icons8-trash-can-50.png";
 export default function ProductInCard({ id, image, title, price, quantity}) {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const addToCart = useCartStore((state) => state.addToCart);
+  const countItems = useCartStore(state => state.cart.find(item => item.id === id)?.quantity || quantity);
 
-  const [countItem, setCountItem] = useState(quantity);
+  const decrementQuantity = useCartStore((state) => state.decrementQuantity);
+  
+
+  const [countItem, setCountItem] = useState(countItems);
 
   const handleRemoveFromCart = () => {
     removeFromCart(id);
     setCountItem(countItem - 1); 
-    
   };
 
   const handleRemoveFromMinus = () => {
-    if (countItem > 1) {
-      setCountItem(countItem - 1); 
-    }else{
-      removeFromCart(id);
-    }
+    decrementQuantity(id); 
   };
 
   const handleAddToCart = () => {
@@ -39,11 +38,11 @@ export default function ProductInCard({ id, image, title, price, quantity}) {
           <div className="title font-bold text-lg lg:text-xl">{title}</div>
           <div className="counter flex gap-8 text-2xl lg:text-3xl">
             <button onClick={handleRemoveFromMinus}>-</button>
-            <div>{countItem}</div>
+            <div>{countItems}</div>
             <button onClick={handleAddToCart}>+</button>
           </div>
           <div className="priceLine flex justify-between text-xl">
-            <div className="price font-bold">{`$${(price * countItem).toFixed(2)}`}</div> {/* Calculate total price */}
+            <div className="price font-bold">{`$${(price * countItems).toFixed(2)}`}</div>
             <button className="btn" onClick={handleRemoveFromCart}>
               <img src={trashIcon} alt="trash" className="lg:w-7 w-5" />
             </button>

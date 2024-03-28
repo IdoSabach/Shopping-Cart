@@ -17,7 +17,7 @@ export default function MenuModal({ isOpen, closeMenu }) {
     }
   }, [isOpen]);
 
-  // Define CSS classes for dark overlay and modal
+
   const overlayClass = isOpen ? "absolute inset-0 bg-black opacity-50 z-50" : "hidden";
   const modalClass = isOpen ? "menu bg-white text-black absolute right-0 z-50 h-full lg:w-2/5 w-11/12" : "hidden";
 

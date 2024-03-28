@@ -23,6 +23,7 @@ const Items = [
     price: 39.99,
     description: "Classic polo shirt with a striped design for men.",
     features: ["Comfortable cotton fabric", "Regular fit", "Ribbed collar and cuffs"],
+    countForClient:0,
   },
   {
     id: 1,
@@ -32,6 +33,7 @@ const Items = [
     price: 29.99,
     description: "Chic blouse featuring a floral print for women.",
     features: ["Lightweight and breathable material", "Button-up front", "Elegant neckline"],
+    countForClient:0,
   },
 
   // Jeans
@@ -43,6 +45,7 @@ const Items = [
     price: 49.99,
     description: "Classic denim jeans with a slim fit for men.",
     features: ["Stretch denim fabric", "Five-pocket styling", "Zip fly with button closure"],
+    countForClient:0,
   },
   {
     id: 3,
@@ -52,6 +55,7 @@ const Items = [
     price: 59.99,
     description: "Trendy high-waisted skinny jeans for women.",
     features: ["Soft and stretchy material", "Figure-flattering fit", "Classic five-pocket design"],
+    countForClient:0,
   },
 
   // Shoes
@@ -63,6 +67,7 @@ const Items = [
     price: 89.99,
     description: "Classic leather loafers for men.",
     features: ["Genuine leather upper", "Slip-on style", "Comfortable padded insole"],
+    countForClient:0,
   },
   {
     id: 5,
@@ -72,6 +77,7 @@ const Items = [
     price: 49.99,
     description: "Casual canvas slip-on shoes for women.",
     features: ["Durable canvas construction", "Elastic goring for easy on and off", "Cushioned footbed"],
+    countForClient:0,
   },
 
   // Pants
@@ -83,6 +89,7 @@ const Items = [
     price: 34.99,
     description: "Versatile cargo shorts with multiple pockets for men.",
     features: ["Breathable cotton fabric", "Adjustable drawstring waist", "Functional cargo pockets"],
+    countForClient:0,
   },
   {
     id: 7,
@@ -92,6 +99,7 @@ const Items = [
     price: 39.99,
     description: "Stylish denim mini skirt with a distressed finish for women.",
     features: ["A-line silhouette", "Button and zip fly closure", "Raw hem detailing"],
+    countForClient:0,
   },
 
   // Other Items
@@ -103,6 +111,7 @@ const Items = [
     price: 44.99,
     description: "Cozy hooded sweatshirt for men, perfect for layering.",
     features: ["Soft fleece fabric", "Front kangaroo pocket", "Adjustable drawstring hood"],
+    countForClient:0,
   },
   // {
   //   id: 9,
