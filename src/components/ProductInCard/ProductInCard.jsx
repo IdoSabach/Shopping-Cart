@@ -14,18 +14,18 @@ export default function ProductInCard({ image, title, price , id}) {
 
   return (
     <div>
-      <section key={id} className="item flex flex-col lg:flex-row m-8 gap-8 p-4 shadow-xl rounded-lg">
+      <section key={id} className="item flex m-4 gap-2 lg:gap-8 p-1 shadow-xl rounded-lg">
         <div>
-          <img src={image} alt="" className="image h-60 w-96 object-cover rounded-xl" />
+          <img src={image} alt="" className="image h-40 w-96 lg:h-60 lg:w-96 object-cover rounded-xl" />
         </div>
-        <div className="text text-2xl flex flex-col gap-2 lg:gap-2 justify-around w-full">
-          <div className="title font-bold p-2">{title}</div>
-          <div className="counter flex gap-8 text-3xl">
+        <div className="text text-xs lg:text-2xl flex flex-col gap-2 justify-between lg:justify-around w-full">
+          <div className="title font-bold text-xl">{title}</div>
+          <div className="counter flex gap-8 text-2xl lg:text-3xl">
             <button onClick={() => setCountItem(countItem - 1)}>-</button>
             <div>{countItem}</div>
             <button onClick={() => setCountItem(countItem + 1)}>+</button>
           </div>
-          <div className="priceLine flex justify-between">
+          <div className="priceLine flex justify-between text-xl">
             <div className="price font-bold">{`$${price}`}</div>
             <button className="btn" onClick={handleRemoveFromCart}>
               <img src={trashIcon} alt="trash" className="w-7" />
