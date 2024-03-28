@@ -16,11 +16,13 @@ const App = () => {
   return (
     <Router>
       <MenuModal isOpen={isCardOpen} closeMenu={handleOpen} />
-      <div className="min-h-screen flex flex-col">
-        <NavBar isOpen={handleOpen} />
-        <AppContent />
+      <div className="min-h-screen flex flex-col justify-between">
+        <div>
+          <NavBar isOpen={handleOpen} />
+          <AppContent />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </Router>
   );
 };

@@ -19,26 +19,43 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="product-page flex flex-col items-center text-center m-4 gap-2 pt-2 pb-2">
-      <h1 className="text-3xl">{product.title}</h1>
-      <div className="flex gap-5 text-xl">
-        <p>{product.type}</p>
-        <p>${product.price}</p>
+    <div className="product-page flex flex-col lg:flex-row justify-center mt-8 gap-2 lg:gap-8 pt-2 pb-2">
+      <div className="product-image flex justify-center">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="rounded-xl h-96 w-96 object-cover"
+        />
       </div>
+      <div className="product-details flex flex-col justify-around p-4 lg:p-0 gap-6 lg:gap-0">
 
-      <div className="product-image mt-4 mb-4 flex justify-center">
-        <img src={product.image} alt={product.title} className="rounded-xl h-96 w-96 object-cover"/>
-      </div>
-      <div className="product-details">
-        <p>Description: {product.description}</p>
-        <ul>
+        <div className="flex flex-col gap-2">
+        <h1 className="text-4xl font-bold">{product.title}</h1>
+        <p className="text-xl">{product.type}</p>
+        </div>
+       
+
+        
+        <ul className="flex flex-col gap-2">
+        <p className="font-bold text-2xl">Description: </p>
+        <div className="text-xl">{product.description}</div>
           {product.features.map((feature, index) => (
-            <li key={index}>{feature}</li>
+            <li key={index} className="text-xl">{feature}</li>
           ))}
         </ul>
+
+        <div className="flex justify-between items-center">
+          <p className="text-3xl font-bold">${product.price}</p>
+          {/* add count items */}
+          <button
+            className="btn text-white bg-black text-2xl p-2 rounded-xl active:scale-95"
+            onClick={handleAddToCart}
+          >
+            Add to Cart
+          </button>
+        </div>
+
       </div>
-      <button className="btn text-white bg-black text-2xl p-2 rounded-xl mt-4 active:scale-95" onClick={handleAddToCart}>Add to Cart</button>
-      
     </div>
   );
 };
