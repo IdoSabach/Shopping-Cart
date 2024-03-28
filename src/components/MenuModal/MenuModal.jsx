@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 export default function MenuModal({ isOpen, closeMenu }) {
   const { cart } = useCartStore();
 
-  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
@@ -17,9 +20,12 @@ export default function MenuModal({ isOpen, closeMenu }) {
     }
   }, [isOpen]);
 
-
-  const overlayClass = isOpen ? "absolute inset-0 bg-black opacity-50 z-50" : "hidden";
-  const modalClass = isOpen ? "menu bg-white text-black absolute right-0 z-50 h-full lg:w-2/5 w-11/12" : "hidden";
+  const overlayClass = isOpen
+    ? "absolute inset-0 bg-black opacity-50 z-50"
+    : "hidden";
+  const modalClass = isOpen
+    ? "menu bg-white text-black absolute right-0 z-50 h-full lg:w-2/5 w-11/12"
+    : "hidden";
 
   return (
     <>
@@ -45,10 +51,7 @@ export default function MenuModal({ isOpen, closeMenu }) {
               {/* Container for scrollable content */}
               <div className="overflow-y-auto max-h-60vh">
                 {cart.map((item, index) => (
-                  <ProductInCard
-                    {...item}
-                    key={index}
-                  />
+                  <ProductInCard {...item} key={index} />
                 ))}
               </div>
               <section className="sum flex items-center gap-4 p-4 bg-white text-black justify-between w-full absolute bottom-0">
@@ -56,9 +59,12 @@ export default function MenuModal({ isOpen, closeMenu }) {
                   <div>Items: {totalItems}</div>
                   <div>Total: {`$${totalPrice.toFixed(2)}`}</div>
                 </div>
-                <button className="btn bg-green-400 text-2xl p-2 rounded-xl active:scale-95 ml-8">
+                <a
+                  className="btn bg-green-400 text-2xl p-2 rounded-xl active:scale-95 ml-8"
+                  href="https://api.whatsapp.com/send/?phone=972537205476&text=אני מעוניין לבצע רכישה בחנות שלך.."
+                >
                   Checkout
-                </button>
+                </a>
               </section>
             </div>
           )}
