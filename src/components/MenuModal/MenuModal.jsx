@@ -29,12 +29,10 @@ export default function MenuModal({ isOpen, closeMenu }) {
 
   return (
     <>
-      {/* Dark overlay */}
       <div className={overlayClass} onClick={closeMenu}></div>
 
-      {/* Menu modal */}
       <div className={modalClass}>
-        <button onClick={closeMenu} className="btnClose text-4xl absolute p-2">
+        <button onClick={closeMenu} className="btnClose text-4xl absolute p-2 ">
           X
         </button>
         <div className="titleOfPage flex flex-col items-center">
@@ -48,7 +46,7 @@ export default function MenuModal({ isOpen, closeMenu }) {
           ) : (
             <div className="titleOfPage text-5xl mt-4 flex flex-col items-center">
               <div className="text-center">Your Items</div>
-              {/* Container for scrollable content */}
+
               <div className="overflow-y-auto max-h-60vh">
                 {cart.map((item, index) => (
                   <ProductInCard {...item} key={index} />

@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer/Footer";
 import React, { useState } from 'react';
 
 export default function PersonPage() {
@@ -14,8 +13,6 @@ export default function PersonPage() {
 
   const handlePrint = (e) => {
     e.preventDefault();
-    // console.log(message)
-    // console.log(name)
     setMessage("")
     setName("")
   }
@@ -57,7 +54,6 @@ export default function PersonPage() {
           Send
         </button>
       </section>
-      {/* <Footer /> */}
     </div>
   );
 }

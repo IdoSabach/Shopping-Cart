@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MenuModal from "../../components/MenuModal/MenuModal.jsx";
-
 import PersonIcon from "/images/person.png";
 import ShoppingCardIcon from "/images/shopping-bag.png";
 import HomeIcon from "/images/home.png";

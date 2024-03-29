@@ -29,7 +29,7 @@ const useCartStore = create((set) => ({
         updatedCart[existingIndex].quantity -= 1;
         return { cart: updatedCart };
       }
-      return state; // If product not found or quantity is already 1, return current state
+      return state;
     }),
   cleanAll: () => set({ cart: [] }),
 }));

@@ -15,7 +15,6 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     addToCart(product);
-    // alert("Product added to cart!");
   };
 
   return (
@@ -46,7 +45,6 @@ const ProductPage = () => {
 
         <div className="flex justify-between items-center">
           <p className="text-3xl font-bold">${product.price}</p>
-          {/* add count items */}
           <button
             className="btn text-white bg-black text-2xl p-2 rounded-xl active:scale-95"
             onClick={handleAddToCart}

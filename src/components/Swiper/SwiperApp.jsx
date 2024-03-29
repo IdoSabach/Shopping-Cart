@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -22,7 +20,6 @@ const arrImage = [
   "/shirts/shirt1.jpg"
 ];
 
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function SwiperApp() {

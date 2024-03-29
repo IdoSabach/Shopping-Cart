@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useCartStore from "../../store/CardStore";
 
 const trashIcon = "/images/icons8-trash-can-50.png";
@@ -7,9 +7,7 @@ export default function ProductInCard({ id, image, title, price, quantity}) {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const addToCart = useCartStore((state) => state.addToCart);
   const countItems = useCartStore(state => state.cart.find(item => item.id === id)?.quantity || quantity);
-
   const decrementQuantity = useCartStore((state) => state.decrementQuantity);
-  
 
   const [countItem, setCountItem] = useState(countItems);
 
