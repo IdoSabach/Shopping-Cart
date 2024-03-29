@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useCartStore from "../../store/CardStore.jsx";
 import ProductInCard from "../../components/ProductInCard/ProductInCard.jsx";
 import { Link } from "react-router-dom";
+import "./MenuModal.css"
 
 export default function MenuModal({ isOpen, closeMenu }) {
   const { cart } = useCartStore();
