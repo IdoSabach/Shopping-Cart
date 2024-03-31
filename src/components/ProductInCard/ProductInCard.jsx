@@ -28,7 +28,7 @@ export default function ProductInCard({ id, image, title, price, quantity}) {
 
   return (
     <div>
-      <section key={id} className="item flex m-4 gap-4 lg:gap-8 p-1 shadow-xl rounded-lg">
+      <section key={id} className="item flex m-4 gap-4 lg:gap-8 p-1 shadow-md rounded-lg">
         <div>
           <img src={image} alt="" className="image h-40 w-96 lg:h-60 lg:w-96 object-cover rounded-xl" />
         </div>

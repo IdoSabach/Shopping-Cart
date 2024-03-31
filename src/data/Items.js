@@ -1,7 +1,3 @@
-const productOne = "/imageSwiper/pink.jpg";
-const productTwo = "/imageSwiper/blue.jpg";
-const productThree = "/imageSwiper/moon.jpg";
-
 const shoe1 = "/shoes/shoe1.jpg"
 const shoe2 = "/shoes/shoe2.jpg"
 const shoe3 = "/shoes/shoe3.jpg"
