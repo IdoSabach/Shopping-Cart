@@ -11,6 +11,7 @@ const arrImage = [
   "/shoes/shoe5.jpg",
   "/shoes/shoeRed.jpg",
   "/shirts/shirt1.jpg",
+  "/shoes/shoe1.jpg",
 ];
 
 export default function Slider() {

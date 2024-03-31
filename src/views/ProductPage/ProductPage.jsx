@@ -33,7 +33,7 @@ const ProductPage = () => {
   }
 
   const handleAddToCart = () => {
-    addToCart(product, quantity); // Pass the selected quantity to addToCart
+    addToCart(product, quantity);
     setIsClick(true);
     notify();
   };
@@ -65,11 +65,11 @@ const ProductPage = () => {
           </ul>
 
           <div className="flex justify-between items-center">
-            <p className="text-3xl font-bold">${product.price}</p>
+            <p className="text-2xl lg:text-3xl font-bold">${product.price}</p>
             <select
               name=""
               id=""
-              className="text-2xl border"
+              className="text-xl lg:text-2xl border"
               value={quantity}
               onChange={(e) => setQuantity(parseInt(e.target.value))}
             >
@@ -81,7 +81,7 @@ const ProductPage = () => {
             </select>
             <div>
               {isClick ? (
-                <div className="btn text-white bg-green-500 text-2xl p-2 rounded-xl flex gap-2 items-center">
+                <div className="btn text-white bg-green-500 text-xl lg:text-2xl p-2 rounded-xl flex gap-2 items-center">
                   <img
                     src="/images/icons8-approved-24.png"
                     alt="v"
@@ -91,7 +91,7 @@ const ProductPage = () => {
                 </div>
               ) : (
                 <button
-                  className="btn text-white bg-black text-2xl p-2 rounded-xl active:scale-95 animate-bounce"
+                  className="btn text-white bg-black text-xl lg:text-2xl p-2 rounded-xl active:scale-95 animate-bounce"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
