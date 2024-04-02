@@ -7,6 +7,7 @@ import ShoppingCardIcon from "/images/shopping-bag.png";
 import HomeIcon from "/images/home.png";
 import ShopIcon from "/images/shop.png";
 import useCartStore from "../../store/CardStore";
+import logoIcon from "/images/logoRolexIcon.png"
 
 const NavBar = ({ isOpen }) => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -32,10 +33,10 @@ const NavBar = ({ isOpen }) => {
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <div>
+    <div className="sticky top-0 z-40">
       <header className="header flex p-4 justify-between items-center text-white bg-gradient-to-r from-green-950 from-5% to-green-900 to-50%">
         <Link to="/" className="flex items-center">
-          <img src="/public/images/logoRolexIcon.png" alt="logoIcon" className="h-7 lg:h-10"/>
+          <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10"/>
           <div className="logo-block text-2xl lg:text-4xl tracking-wide">Rolex</div>
         </Link>
 

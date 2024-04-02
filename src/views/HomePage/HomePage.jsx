@@ -11,10 +11,10 @@ export default function HomePage() {
     <div className="homePageDefault flex flex-col items-center gap-3 text-center ">
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
         <header className="text-xl rounded-3xl p-1 pr-4 pl-4 md:text-3xl border border-green-900">
-          Welcome To Lorem, ipsum dolor.
+          Welcome To Rolex.
         </header>
         <nav className="subHeader text-2xl md:text-4xl">
-          Lorem ipsum dolor sit amet consectetur.
+        Explore the Rolex collection
         </nav>
         <Link
           to="/shopPage"
@@ -26,8 +26,8 @@ export default function HomePage() {
 
       <SwiperApp />
 
-      <section className="text font-bold text-3xl mb-4 mt-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing.
+      <section className="text-2xl mt-8 mb-8 lg:mb-20 lg:mt-20 w-4/5 lg:w-2/3">
+      The Rolex collection offers a wide range of prestigious, high-precision timepieces, from Professional to Classic models to suit any wrist
       </section>
 
       <section className="sectionPro grid gap-6 lg:grid-cols-3 p-4">

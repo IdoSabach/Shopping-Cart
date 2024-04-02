@@ -48,7 +48,7 @@ export default function PersonPage() {
 
         <button
           type="submit"
-          className="btn border bg-green-400 w-1/3 rounded-xl "
+          className="btn border bg-green-900 w-1/3 rounded-xl text-white p-3 "
           onClick={handlePrint}
         >
           Send

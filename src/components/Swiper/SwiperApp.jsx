@@ -7,13 +7,15 @@ import "swiper/css/navigation";
 
 import "./Swiper.css";
 
-
 const arrImage = [
   "/watch/rolex_01.png",
   "/watch/rolex_02.png",
   "/watch/rolex_03.png",
   "/watch/rolex_04.png",
   "/watch/rolex_05.png",
+  "/watch/rolex-orange.png",
+  "/watch/rolex-black.png",
+  "/watch/rolex-lax.png",
   "/watch/rolex_06.png",
   "/watch/rolex_07.png",
   "/watch/rolex_08.png",
@@ -63,7 +65,11 @@ export default function SwiperApp() {
         >
           {arrImage.map((shoe, index) => (
             <SwiperSlide key={index}>
-              <img src={shoe} alt="" className="image h-96 w-96 object-cover rounded-xl" />
+              <img
+                src={shoe}
+                alt=""
+                className="image h-96 w-96 object-cover rounded-xl"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -86,7 +92,11 @@ export default function SwiperApp() {
         >
           {arrImage.map((shoe, index) => (
             <SwiperSlide key={index}>
-              <img src={shoe} alt="" className="image h-64 w-96 object-cover rounded-xl" />
+              <img
+                src={shoe}
+                alt=""
+                className="image h-64 w-96 object-cover rounded-xl"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
