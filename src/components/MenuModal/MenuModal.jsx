@@ -60,7 +60,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
                   <div>Total: {`$${totalPrice.toFixed(2)}`}</div>
                 </div>
                 <a
-                  className="btn bg-green-400 text-2xl p-2 rounded-xl active:scale-95 ml-8 animate-bounce"
+                  className="btn bg-green-900 text-2xl p-2 rounded-xl active:scale-95 ml-8 animate-bounce text-white"
                   href="https://api.whatsapp.com/send/?phone=972537205476&text=אני מעוניין לבצע רכישה בחנות שלך.."
                 >
                   Checkout

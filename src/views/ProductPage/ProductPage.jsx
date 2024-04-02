@@ -81,7 +81,7 @@ const ProductPage = () => {
             </select>
             <div>
               {isClick ? (
-                <div className="btn text-white bg-green-500 text-xl lg:text-2xl p-2 rounded-xl flex gap-2 items-center">
+                <div className="btn text-white bg-green-900 text-xl lg:text-2xl p-2 rounded-xl flex gap-2 items-center">
                   <img
                     src="/images/icons8-approved-24.png"
                     alt="v"

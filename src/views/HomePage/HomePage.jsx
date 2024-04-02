@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div className="homePageDefault flex flex-col items-center gap-3 text-center">
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
-        <header className="text-xl border-black rounded-3xl p-1 pr-4 pl-4 bg-slate-300 md:text-3xl">
+        <header className="text-xl rounded-3xl p-1 pr-4 pl-4 md:text-3xl border border-green-900">
           Welcome To Lorem, ipsum dolor.
         </header>
         <nav className="subHeader text-2xl md:text-4xl">
@@ -18,7 +18,7 @@ export default function HomePage() {
         </nav>
         <Link
           to="/shopPage"
-          className="btn-shop p-3 text-lg bg-slate-700 text-white rounded-3xl md:text-x active:scale-95"
+          className="btn-shop p-3 text-lg bg-green-900 text-white rounded-3xl md:text-x active:scale-95"
         >
           Shop Now
         </Link>
@@ -47,7 +47,7 @@ export default function HomePage() {
       <section className="mt-8">
       <Link
           to="/shopPage"
-          className="btn-shop p-4 text-2xl bg-slate-700 text-white rounded-3xl md:text-x active:scale-95"
+          className="btn-shop p-4 text-2xl bg-green-900 text-white rounded-3xl md:text-x active:scale-95"
         >
           Shop Now
         </Link>

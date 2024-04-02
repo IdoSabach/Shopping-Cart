@@ -9,15 +9,21 @@ import "./Swiper.css";
 
 
 const arrImage = [
-  "/shoes/shoe1.jpg",
-  "/shoes/shoe2.jpg",
-  "/shirts/shirt2.jpg",
-  "/shoes/shoe3.jpg",
-  "/shoes/shoe4.jpg",
-  "/shirts/shirt3.jpg",
-  "/shoes/shoe5.jpg",
-  "/shoes/shoeRed.jpg",
-  "/shirts/shirt1.jpg"
+  "/watch/rolex_01.png",
+  "/watch/rolex_02.png",
+  "/watch/rolex_03.png",
+  "/watch/rolex_04.png",
+  "/watch/rolex_05.png",
+  "/watch/rolex_06.png",
+  "/watch/rolex_07.png",
+  "/watch/rolex_08.png",
+  "/watch/rolex_09.png",
+  "/watch/rolex_10.png",
+  "/watch/rolex_11.png",
+  "/watch/rolex_12.png",
+  "/watch/rolex_13.png",
+  "/watch/rolex_14.png",
+  "/watch/rolex_15.png",
 ];
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -45,7 +51,7 @@ export default function SwiperApp() {
           centeredSlides={true}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           // pagination={{
@@ -63,12 +69,12 @@ export default function SwiperApp() {
         </Swiper>
       ) : (
         <Swiper
-          slidesPerView={1.5}
+          slidesPerView={2.8}
           spaceBetween={10}
           centeredSlides={true}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           // pagination={{
