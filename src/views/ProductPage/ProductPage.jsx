@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Items from "../../data/Items";
 import useCartStore from "../../store/CardStore.jsx";
@@ -45,7 +45,7 @@ const ProductPage = () => {
           <img
             src={product.image}
             alt={product.title}
-            className="rounded-xl h-96 w-96 object-cover"
+            className="h-96 w-96 object-cover"
           />
         </div>
         <div className="product-details flex flex-col justify-around p-4 lg:p-0 gap-6 lg:gap-0">

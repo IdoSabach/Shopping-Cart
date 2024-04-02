@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useCartStore from "../../store/CardStore.jsx";
 import ProductInCard from "../../components/ProductInCard/ProductInCard.jsx";
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import "./MenuModal.css"
 
-export default function MenuModal({ isOpen, closeMenu }) {
+const MenuModal = ({ isOpen, closeMenu }) => {
   const { cart } = useCartStore();
 
   const totalPrice = cart.reduce(
@@ -72,3 +73,10 @@ export default function MenuModal({ isOpen, closeMenu }) {
     </>
   );
 }
+
+MenuModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired
+};
+
+export default MenuModal;

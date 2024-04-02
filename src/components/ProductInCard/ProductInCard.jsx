@@ -1,9 +1,10 @@
 import { useState } from "react";
 import useCartStore from "../../store/CardStore";
+import PropTypes from 'prop-types';
 
 const trashIcon = "/images/icons8-trash-can-50.png";
 
-export default function ProductInCard({ id, image, title, price, quantity}) {
+const ProductInCard = ({ id, image, title, price, quantity}) => {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const addToCart = useCartStore((state) => state.addToCart);
   const countItems = useCartStore(state => state.cart.find(item => item.id === id)?.quantity || quantity);
@@ -50,3 +51,14 @@ export default function ProductInCard({ id, image, title, price, quantity}) {
     </div>
   );
 }
+
+ProductInCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired
+};
+
+
+export default ProductInCard;

@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import PropTypes from 'prop-types';
+
 import PersonIcon from "/images/person.png";
 import ShoppingCardIcon from "/images/shopping-bag.png";
 import HomeIcon from "/images/home.png";
 import ShopIcon from "/images/shop.png";
 import useCartStore from "../../store/CardStore";
 
-export default function NavBar({ isOpen }) {
+
+const NavBar = ({ isOpen }) => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isCardOpen, setIdCardOpen] = useState(false);
   const cart = useCartStore((state) => state.cart);
@@ -27,7 +30,6 @@ export default function NavBar({ isOpen }) {
     isOpen(isCardOpen);
   };
 
-  // Calculate total quantity of products in the cart
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
@@ -55,7 +57,7 @@ export default function NavBar({ isOpen }) {
                   alt="ShoppingCard"
                   className="w-7 md:w-12"
                 />
-                <div className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs -mt-2.5 -mr-2.5">
+                <div className="absolute top-0 right-0 text-black rounded-full w-5 h-5 flex justify-center items-center text-xs -mt-2.5 -mr-2.5">
                   {totalQuantity}
                 </div>
               </button>
@@ -78,7 +80,7 @@ export default function NavBar({ isOpen }) {
                     alt="ShoppingCard"
                     className="w-7 md:w-9 filter invert"
                   />
-                  <div className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-7 h-7 flex justify-center items-center text-lg -mt-2.5 -mr-2.5 p-4">
+                  <div className="absolute top-0 right-0 bg-white text-black rounded-full w-7 h-7 flex justify-center items-center text-lg -mt-2.5 -mr-2.5 p-4">
                     {totalQuantity}
                   </div>
                   <p>Your Bag</p>
@@ -91,3 +93,10 @@ export default function NavBar({ isOpen }) {
     </div>
   );
 }
+
+
+// NavBar.propTypes = {
+//   isOpen: PropTypes.bool.isRequired,
+// };
+
+export default NavBar

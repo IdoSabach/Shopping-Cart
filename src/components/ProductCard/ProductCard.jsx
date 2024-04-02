@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-export default function ProductCard({ image, title, type, price, id }) {
+const ProductCard = ({ image, title, type, price, id }) => {
 
   return (
     <div className="allCard text-left p-4 shadow-xl rounded-xl">
@@ -20,3 +21,13 @@ export default function ProductCard({ image, title, type, price, id }) {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  type:PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  id:PropTypes.number.isRequired,
+};
+
+export default ProductCard;
