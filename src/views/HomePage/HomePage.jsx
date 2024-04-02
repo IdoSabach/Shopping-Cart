@@ -8,7 +8,7 @@ export default function HomePage() {
   const displayedItems = Items.slice(0, 3);
   let i = 0;
   return (
-    <div className="homePageDefault flex flex-col items-center gap-3 text-center">
+    <div className="homePageDefault flex flex-col items-center gap-3 text-center ">
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
         <header className="text-xl rounded-3xl p-1 pr-4 pl-4 md:text-3xl border border-green-900">
           Welcome To Lorem, ipsum dolor.

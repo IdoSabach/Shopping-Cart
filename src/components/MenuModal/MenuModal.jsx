@@ -46,7 +46,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
               </Link>
             </section>
           ) : (
-            <div className="titleOfPage text-5xl mt-4 flex flex-col items-center">
+            <div className="titleOfPage text-4xl lg:text-5xl mt-4 flex flex-col items-center">
               <div className="text-center">Your Items</div>
 
               <div className="overflow-y-auto max-h-60vh">
@@ -54,13 +54,13 @@ const MenuModal = ({ isOpen, closeMenu }) => {
                   <ProductInCard {...item} key={index} />
                 ))}
               </div>
-              <section className="sum flex items-center gap-4 p-4 bg-white text-black justify-between w-full absolute bottom-0">
-                <div className="sum flex gap-8 text-2xl">
+              <section className="sum flex items-center gap-4 p-4 bg-green-900 text-white justify-between w-full absolute bottom-0">
+                <div className="sum flex gap-8 text-xl">
                   <div>Items: {totalItems}</div>
                   <div>Total: {`$${totalPrice.toFixed(2)}`}</div>
                 </div>
                 <a
-                  className="btn bg-green-900 text-2xl p-2 rounded-xl active:scale-95 ml-8 animate-bounce text-white"
+                  className="btn bg-green-900 text-2xl p-2 rounded-xl active:scale-95 ml-8 text-white border border-white animate-pulse"
                   href="https://api.whatsapp.com/send/?phone=972537205476&text=אני מעוניין לבצע רכישה בחנות שלך.."
                 >
                   Checkout

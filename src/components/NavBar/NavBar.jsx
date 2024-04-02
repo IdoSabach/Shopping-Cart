@@ -34,8 +34,9 @@ const NavBar = ({ isOpen }) => {
   return (
     <div>
       <header className="header flex p-4 justify-between items-center text-white bg-gradient-to-r from-green-950 from-5% to-green-900 to-50%">
-        <Link to="/">
-          <div className="logo-block text-2xl lg:text-4xl">Lorem ipsum.</div>
+        <Link to="/" className="flex items-center">
+          <img src="/public/images/logoRolexIcon.png" alt="logoIcon" className="h-7 lg:h-10"/>
+          <div className="logo-block text-2xl lg:text-4xl tracking-wide">Rolex</div>
         </Link>
 
         <div>
