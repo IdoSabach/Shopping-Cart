@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Items from "../../data/Items";
 import useCartStore from "../../store/CardStore.jsx";
@@ -15,6 +15,18 @@ const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [isClick, setIsClick] = useState(false);
   const { addToCart } = useCartStore();
+
+  const totalQuantityOfProductInCart = cart
+      .filter((item) => item.id === product.id)
+      .reduce((total, item) => total + item.quantity, 0);
+    const newTotalQuantity = totalQuantityOfProductInCart + quantity;
+
+    useEffect(() => {
+      if(newTotalQuantity < 4){
+        setIsClick(false)
+      }
+      
+    }, [newTotalQuantity]);
 
   const notifySuccess = () =>
     toast.success(`${product.title} Added to your cart`, {
@@ -47,11 +59,6 @@ const ProductPage = () => {
   }
 
   const handleAddToCart = () => {
-    const totalQuantityOfProductInCart = cart
-      .filter((item) => item.id === product.id)
-      .reduce((total, item) => total + item.quantity, 0);
-    const newTotalQuantity = totalQuantityOfProductInCart + quantity;
-
     if (newTotalQuantity < 3) {
       addToCart(product, quantity);
       notifySuccess();
