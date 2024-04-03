@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import PropTypes from 'prop-types';
+import { Link, useLocation } from "react-router-dom";
+import "./NavBar.css"
 
 import PersonIcon from "/images/person.png";
 import ShoppingCardIcon from "/images/shopping-bag.png";
@@ -12,7 +12,10 @@ import logoIcon from "/images/logoRolexIcon.png"
 const NavBar = ({ isOpen }) => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isCardOpen, setIdCardOpen] = useState(false);
+  const [activeLink , setActiveLink] = useState("/")
   const cart = useCartStore((state) => state.cart);
+
+  const location = useLocation()
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,6 +27,10 @@ const NavBar = ({ isOpen }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    setActiveLink(location.pathname)
+  },[location])
 
   const handleCardOpen = () => {
     setIdCardOpen(true);
@@ -42,7 +49,7 @@ const NavBar = ({ isOpen }) => {
 
         <div>
           {!isDesktop ? (
-            <div className="icon-block flex flex-row gap-4 items-center">
+            <div className="navForMobile flex flex-row gap-4 items-center">
               <Link to="/">
                 <img
                   src={HomeIcon}
@@ -76,14 +83,14 @@ const NavBar = ({ isOpen }) => {
               </button>
             </div>
           ) : (
-            <div className="icon-block flex flex-row gap-10 items-center text-2xl">
-              <Link to="/">
+            <div className="navForDesktop flex flex-row gap-10 items-center text-2xl">
+              <Link to="/" className={activeLink === "/" ? "active" : ""}>
                 <p>Home</p>
               </Link>
-              <Link to="shopPage">
+              <Link to="shopPage" className={activeLink === "/shopPage" ? "active" : ""}>
                 <p>Shop</p>
               </Link>
-              <Link to="ContactPage">
+              <Link to="ContactPage" className={activeLink === "/ContactPage" ? "active" : ""}>
                 <p>Contact Us</p>
               </Link>
               <button onClick={handleCardOpen} className="relative">
