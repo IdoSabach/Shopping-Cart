@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 const numArr = [1, 2, 3];
 
 const ProductPage = () => {
+  const { cart } = useCartStore();
   const { id } = useParams();
   const product = Items.find((item) => item.id === parseInt(id));
 
@@ -15,16 +16,29 @@ const ProductPage = () => {
   const [isClick, setIsClick] = useState(false);
   const { addToCart } = useCartStore();
 
-  const notify = () =>
+  const notifySuccess = () =>
     toast.success(`${product.title} Added to your cart`, {
-      position: "bottom-right",
+      position: "bottom-left",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "dark",
+      // transition: Bounce,
+    });
+
+  const notifyError = () =>
+    toast.error("Maximum number of items", {
+      position: "bottom-left",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
       // transition: Bounce,
     });
 
@@ -33,9 +47,22 @@ const ProductPage = () => {
   }
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
-    setIsClick(true);
-    notify();
+    const totalQuantityOfProductInCart = cart
+      .filter((item) => item.id === product.id)
+      .reduce((total, item) => total + item.quantity, 0);
+    const newTotalQuantity = totalQuantityOfProductInCart + quantity;
+
+    if (newTotalQuantity < 3) {
+      addToCart(product, quantity);
+      notifySuccess();
+    } else if (newTotalQuantity == 3) {
+      addToCart(product, quantity);
+      notifySuccess();
+      setIsClick(true);
+    } else {
+      setIsClick(true);
+      notifyError();
+    }
   };
 
   return (
@@ -81,13 +108,8 @@ const ProductPage = () => {
             </select>
             <div>
               {isClick ? (
-                <div className="btn text-white bg-green-900 text-xl lg:text-2xl p-2 rounded-xl flex gap-2 items-center">
-                  <img
-                    src="/images/icons8-approved-24.png"
-                    alt="v"
-                    className="w-6 h-6 filter invert"
-                  />
-                  Added to Cart
+                <div className="btn text-white bg-black text-xl lg:text-2xl p-2 rounded-xl opacity-50 cursor-not-allowed">
+                  Max Items
                 </div>
               ) : (
                 <button
@@ -111,7 +133,7 @@ const ProductPage = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
         // transition:Bounce
       />
     </div>
