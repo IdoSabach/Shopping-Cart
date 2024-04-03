@@ -29,6 +29,7 @@ const Items = [
     description: "Oyster, 36 mm, Everose gold and diamonds",
     features: ["M128345RBR-0043","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 36","Gold"],
   },
   {
     id: 1,
@@ -39,6 +40,7 @@ const Items = [
     description: "Oyster, 36 mm, yellow gold and diamonds",
     features: ["M128348RBR-0049","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 36","Gold"],
   },
   {
     id: 2,
@@ -49,6 +51,7 @@ const Items = [
     description: "Oyster, 36 mm, Everose gold and diamonds",
     features: ["M128345RBR-0044","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 36","Gold"],
   },
   {
     id: 3,
@@ -59,6 +62,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel and white gold",
     features: ["M278274-0035","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
   {
     id: 4,
@@ -69,6 +73,7 @@ const Items = [
     description: "Oyster, 31 mm, yellow gold",
     features: ["M278278-0030","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 5,
@@ -79,6 +84,7 @@ const Items = [
     description: "Oyster, 31 mm, yellow gold and diamonds",
     features: ["M278288RBR-0038","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 6,
@@ -89,6 +95,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel, pink gold and diamonds",
     features: ["M278341RBR-0029","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 7,
@@ -99,6 +106,7 @@ const Items = [
     description: "Oyster, 31 mm, oyster steel, yellow gold and diamonds",
     features: ["M278383RBR-0021","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 8,
@@ -109,6 +117,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel",
     features: ["M278240-0014","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
   {
     id: 9,
@@ -119,6 +128,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel and pink gold",
     features: ["M278241-0009","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 10,
@@ -129,6 +139,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel and yellow gold",
     features: ["M278241-0002","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 11,
@@ -139,6 +150,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel and yellow gold",
     features: ["M278241-0019","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 12,
@@ -149,6 +161,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel and white gold",
     features: ["M278241-0030","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
   {
     id: 13,
@@ -159,6 +172,7 @@ const Items = [
     description: "Oyster, 31 mm, oyster steel, yellow gold and diamonds",
     features: ["M278343RBR-0016","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","Gold"],
   },
   {
     id: 14,
@@ -169,6 +183,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel, white gold with diamonds",
     features: ["M278344RBR-0029","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
   {
     id: 15,
@@ -179,6 +194,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel, white gold with diamonds",
     features: ["M278384RBR-0008","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
   {
     id: 16,
@@ -189,6 +205,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel",
     features: ["M278240-0005","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
   {
     id: 17,
@@ -199,6 +216,7 @@ const Items = [
     description: "Oyster, 31 mm, Oyster steel and white gold",
     features: ["M278240-0018","Waterproof up to 100 meters (300 feet)","Automatic, mechanical, self-tensioning mechanism"],
     countForClient:0,
+    filter:["All","Size 31","White Gold"],
   },
 
   // {
