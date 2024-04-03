@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import useCartStore from "../../store/CardStore.jsx";
 import ProductInCard from "../../components/ProductInCard/ProductInCard.jsx";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./MenuModal.css"
+import "./MenuModal.css";
 
 const MenuModal = ({ isOpen, closeMenu }) => {
   const { cart } = useCartStore();
@@ -30,7 +30,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
     : "hidden";
 
   return (
-    <>
+    <div>
       <div className={overlayClass} onClick={closeMenu}></div>
 
       <div className={modalClass}>
@@ -39,9 +39,9 @@ const MenuModal = ({ isOpen, closeMenu }) => {
         </button>
         <div className="titleOfPage flex flex-col items-center">
           {cart.length === 0 ? (
-            <section className="text-4xl p-4 flex flex-col text-center gap-4">
+            <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16">
               YOUR CART IS LOOKING EMPTY
-              <Link to="/shopPage" className="font-bold" onClick={closeMenu}>
+              <Link to="/shopPage" className="font-bold border border-green-900 animate-pulse rounded-xl p-2" onClick={closeMenu}>
                 SHOP NOW
               </Link>
             </section>
@@ -55,12 +55,12 @@ const MenuModal = ({ isOpen, closeMenu }) => {
                 ))}
               </div>
               <section className="sum flex items-center gap-4 p-4 bg-green-900 text-white justify-between w-full absolute bottom-0">
-                <div className="sum flex gap-8 text-xl">
+                <div className="sum flex gap-6 text-lg lg:text-xl">
                   <div>Items: {totalItems}</div>
                   <div>Total: {`$${totalPrice.toFixed(2)}`}</div>
                 </div>
                 <a
-                  className="btn bg-green-900 text-2xl p-2 rounded-xl active:scale-95 ml-8 text-white border border-white animate-pulse"
+                  className="btn bg-green-900 text-xl lg:text-2xl p-2 rounded-xl active:scale-95 ml-8 text-white border border-white animate-pulse"
                   href="https://api.whatsapp.com/send/?phone=972537205476&text=אני מעוניין לבצע רכישה בחנות שלך.."
                 >
                   Checkout
@@ -70,13 +70,13 @@ const MenuModal = ({ isOpen, closeMenu }) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 MenuModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  closeMenu: PropTypes.func.isRequired
+  closeMenu: PropTypes.func.isRequired,
 };
 
 export default MenuModal;

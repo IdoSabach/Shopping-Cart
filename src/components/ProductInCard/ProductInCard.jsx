@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 const trashIcon = "/images/icons8-trash-can-50.png";
 
 const ProductInCard = ({ id, image, title, price, quantity}) => {
+  const { cart } = useCartStore();
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const addToCart = useCartStore((state) => state.addToCart);
   const countItems = useCartStore(state => state.cart.find(item => item.id === id)?.quantity || quantity);
-  const decrementQuantity = useCartStore((state) => state.decrementQuantity);
+  const decrementQuantity = useCartStore((state) => state.decrementQuantity);  
 
   const [countItem, setCountItem] = useState(countItems);
 
@@ -19,13 +20,18 @@ const ProductInCard = ({ id, image, title, price, quantity}) => {
 
   const handleRemoveFromMinus = () => {
     decrementQuantity(id); 
+    setCountItem(countItem - 1); 
   };
 
   const handleAddToCart = () => {
-    addToCart({ id, image, title, price, quantity: countItem + 1 });
-    setCountItem(countItem + 1);
-    
+    const totalQuantityInCart = cart.reduce((total, item) => total + item.quantity, 0);
+    const newCount = countItem + 1;
+    if (totalQuantityInCart + 1 <= 3) {
+      addToCart({ id, image, title, price, quantity: newCount });
+      setCountItem(newCount);
+    }
   };
+  
 
   return (
     <div>
@@ -41,7 +47,7 @@ const ProductInCard = ({ id, image, title, price, quantity}) => {
             <button onClick={handleAddToCart}>+</button>
           </div>
           <div className="priceLine flex justify-between text-xl">
-            <div className="price font-bold">{`$${(price * countItems).toFixed(2)}`}</div>
+            <div className="price font-bold text-base lg:text-xl">{`$${(price * countItems).toFixed(2)}`}</div>
             <button className="btn" onClick={handleRemoveFromCart}>
               <img src={trashIcon} alt="trash" className="lg:w-7 w-5" />
             </button>
