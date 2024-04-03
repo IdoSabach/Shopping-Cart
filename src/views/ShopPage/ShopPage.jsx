@@ -27,7 +27,7 @@ export default function ShopPage() {
       <section className="title text-3xl lg:text-5xl mb-4 mt-8 lg:mb-12 lg:mt-12 text-center">
         The Collection Rolex watches
       </section>
-      <section className="flex flex-col items-center gap-2 mb-3 w-full">
+      <section className="flex flex-col items-center gap-2 mb-3 w-full lg:w-auto">
         <div className="text-2xl font-bold flex w-full items-center justify-between gap-4">
           <p>Sort by category</p>
 
@@ -48,7 +48,7 @@ export default function ShopPage() {
           </button>
         </div>
         {openFilterBox ? (
-          <div className="filters grid grid-cols-3 lg:grid-cols-6 gap-1 ">
+          <div className="filters grid grid-cols-3 lg:grid-cols-5 gap-1 ">
             {arrFilters.map((type, index) => (
               <button
                 key={index}
