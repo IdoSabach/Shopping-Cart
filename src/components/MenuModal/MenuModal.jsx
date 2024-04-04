@@ -14,6 +14,11 @@ const MenuModal = ({ isOpen, closeMenu }) => {
   );
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
+  const numberWithCommas = (number) => {
+    return number.toLocaleString();
+  };
+  
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -21,6 +26,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
+
 
   const overlayClass = isOpen
     ? "absolute inset-0 bg-black opacity-50 z-50"
@@ -57,7 +63,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
               <section className="sum flex items-center gap-4 p-4 bg-green-900 text-white justify-between w-full absolute bottom-0">
                 <div className="sum flex gap-6 text-lg lg:text-xl">
                   <div>Items: {totalItems}</div>
-                  <div>Total: {`$${totalPrice.toFixed(2)}`}</div>
+                  <div>Total: {`$${numberWithCommas(totalPrice)}`}</div>
                 </div>
                 <a
                   className="btn bg-green-900 text-xl lg:text-2xl p-2 rounded-xl active:scale-95 ml-8 text-white border border-white animate-pulse"

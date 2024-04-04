@@ -22,6 +22,10 @@ export default function ShopPage() {
     setOpenFilterBox(!openFilterBox);
   };
 
+  const numberWithCommas = (number) => {
+    return number.toLocaleString();
+  };
+
   return (
     <div className="shop flex flex-col items-center w-full p-4">
       <section className="title text-3xl lg:text-5xl mb-4 mt-8 lg:mb-12 lg:mt-12 text-center">
@@ -73,7 +77,7 @@ export default function ShopPage() {
               image={item.image}
               title={item.title}
               type={item.type}
-              price={`$${item.price}`}
+              price={`$${numberWithCommas(item.price)}`}
             />
           </section>
         ))}

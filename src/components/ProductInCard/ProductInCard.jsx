@@ -19,7 +19,7 @@ const notifyErrorMax = () =>
     // transition: Bounce,
   });
 
-  const notifyErrorMin = () =>
+const notifyErrorMin = () =>
   toast.error("Minimum number of items", {
     position: "bottom-left",
     autoClose: 2000,
@@ -31,6 +31,10 @@ const notifyErrorMax = () =>
     theme: "dark",
     // transition: Bounce,
   });
+
+const numberWithCommas = (number) => {
+  return number.toLocaleString();
+};
 
 const ProductInCard = ({ id, image, title, price, quantity }) => {
   const { cart } = useCartStore();
@@ -51,14 +55,12 @@ const ProductInCard = ({ id, image, title, price, quantity }) => {
   const handleRemoveFromMinus = () => {
     decrementQuantity(id);
     setCountItem(countItem - 1);
-    
+
     // Check if the new count becomes zero
     if (countItems === 1) {
       notifyErrorMin();
     }
   };
-  
-  
 
   const handleAddToCart = () => {
     const totalQuantityInCart = cart.reduce(
@@ -66,7 +68,7 @@ const ProductInCard = ({ id, image, title, price, quantity }) => {
       0
     );
     const newCount = countItem + 1;
-    
+
     if (totalQuantityInCart + 1 <= 3) {
       addToCart({ id, image, title, price, quantity: newCount });
       setCountItem(newCount);
@@ -74,7 +76,6 @@ const ProductInCard = ({ id, image, title, price, quantity }) => {
       notifyErrorMax();
     }
   };
-  
 
   return (
     <div>
@@ -97,16 +98,15 @@ const ProductInCard = ({ id, image, title, price, quantity }) => {
             <button onClick={handleAddToCart}>+</button>
           </div>
           <div className="priceLine flex justify-between text-xl">
-            <div className="price font-bold text-base lg:text-xl">{`$${(
+            <div className="price font-bold text-base lg:text-xl">{`$${numberWithCommas(
               price * countItems
-            ).toFixed(2)}`}</div>
+            )}`}</div>
             <button className="btn" onClick={handleRemoveFromCart}>
               <img src={trashIcon} alt="trash" className="lg:w-7 w-5" />
             </button>
           </div>
         </div>
       </section>
- 
     </div>
   );
 };

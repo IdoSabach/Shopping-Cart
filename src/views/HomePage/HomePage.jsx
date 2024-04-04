@@ -6,7 +6,9 @@ import Items from "../../data/Items.js";
 
 export default function HomePage() {
   const displayedItems = Items.slice(0, 3);
-  let i = 0;
+  const numberWithCommas = (number) => {
+    return number.toLocaleString();
+  };
   return (
     <div className="homePageDefault flex flex-col items-center gap-3 text-center ">
       <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
@@ -32,13 +34,13 @@ export default function HomePage() {
 
       <section className="sectionPro grid gap-6 lg:grid-cols-3 p-4">
         {displayedItems.map((item, index) => (
-          <section key={index} className="item flex flex-col lg:flex-row gap-6">
+          <section key={item.id} className="item flex flex-col lg:flex-row gap-6">
             <ProductCard
-              id={i++}
+              id={item.id}
               image={item.image}
               title={item.title}
               type={item.type}
-              price={`$${item.price}`}
+              price={`$${numberWithCommas(item.price)}`}
             />
           </section>
         ))}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const ProductCard = ({ image, title, type, price, id }) => {
-
+  
   return (
     <div className="allCard text-left p-4 shadow-xl rounded-xl border border-green-900">
       <Link key={id} to={`/item/${id}`} className="re relative">

@@ -7,6 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 const numArr = [1, 2, 3];
 
+const numberWithCommas = (number) => {
+  return number.toLocaleString();
+};
+
 const ProductPage = () => {
   const { cart } = useCartStore();
   const { id } = useParams();
@@ -99,7 +103,7 @@ const ProductPage = () => {
           </ul>
 
           <div className="flex justify-between items-center">
-            <p className="text-2xl lg:text-3xl font-bold">${product.price}</p>
+            <p className="text-2xl lg:text-3xl font-bold">${numberWithCommas(product.price)}</p>
             <select
               name=""
               id=""
