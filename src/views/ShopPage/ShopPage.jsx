@@ -66,10 +66,10 @@ export default function ShopPage() {
         )}
       </section>
       <section className="sectionPro grid gap-6 lg:grid-cols-3">
-        {filteredItems.map((item, index) => (
-          <section key={index} className="item flex flex-col lg:flex-row gap-6">
+        {filteredItems.map((item) => (
+          <section key={item.id} className="item flex flex-col lg:flex-row gap-6">
             <ProductCard
-              id={i++}
+              id={item.id}
               image={item.image}
               title={item.title}
               type={item.type}

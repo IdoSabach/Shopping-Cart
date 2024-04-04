@@ -13,14 +13,6 @@ const ProductCard = ({ image, title, type, price, id }) => {
           <div className="price font-bold">{price}</div>
         </div>
       </Link>
-
-      {/* <div className="flex justify-between items-center p-2">
-        <div>
-          <div className="title font-bold">{title}</div>
-          <div className="type text-gray-400">{type}</div>
-          <div className="price font-bold">{price}</div>
-        </div>
-      </div> */}
     </div>
   );
 }
