@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Slider from "../../components/Slider/Slider.jsx";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import SwiperApp from "../../components/Swiper/SwiperApp.jsx";
-import Items from "../../data/Items.js";
+import items from "../../data/Items.js";
 
 export default function HomePage() {
-  const displayedItems = Items.slice(0, 3);
+  const displayedItems = items.slice(0, 3);
   const numberWithCommas = (number) => {
     return number.toLocaleString();
   };
@@ -33,7 +33,7 @@ export default function HomePage() {
       </section>
 
       <section className="sectionPro grid gap-6 lg:grid-cols-3 p-4">
-        {displayedItems.map((item, index) => (
+        {displayedItems.map((item) => (
           <section key={item.id} className="item flex flex-col lg:flex-row gap-6">
             <ProductCard
               id={item.id}

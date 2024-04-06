@@ -1,20 +1,19 @@
 import { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-import Items from "../../data/Items.js";
+import items from "../../data/Items.js";
 
 const arrFilters = ["All", "Size 31", "Size 36", "Gold", "White Gold"];
 
 export default function ShopPage() {
   const [activeFilter, setActiveFilter] = useState("");
   const [activeButtonIndex, setActiveButtonIndex] = useState(0);
-  const [filteredItems, setFilteredItems] = useState(Items);
+  const [filteredItems, setFilteredItems] = useState(items);
   const [openFilterBox, setOpenFilterBox] = useState(false);
-  let i = 0;
 
   const handleClick = (type, index, filter) => {
     setActiveFilter(type);
     setActiveButtonIndex(index);
-    const filtered = Items.filter((item) => item.filter.includes(filter));
+    const filtered = items.filter((item) => item.filter.includes(filter));
     setFilteredItems(filtered);
   };
 

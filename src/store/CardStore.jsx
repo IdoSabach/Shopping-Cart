@@ -1,9 +1,7 @@
 import { create } from "zustand";
 
 const useCartStore = create((set) => {
-  // Retrieve cart data from local storage or initialize to empty array
   const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  // Calculate initial itemCount
   const itemCount = storedCart.reduce((total, item) => total + item.quantity, 0);
 
   return {
@@ -23,7 +21,6 @@ const useCartStore = create((set) => {
           updatedItemCount += quantity;
         }
 
-        // Update local storage
         localStorage.setItem("cart", JSON.stringify(updatedCart));
 
         return { cart: updatedCart, itemCount: updatedItemCount };
@@ -34,7 +31,6 @@ const useCartStore = create((set) => {
         const updatedCart = state.cart.filter((product) => product.id !== productId);
         const updatedItemCount = state.itemCount - (removedItem ? removedItem.quantity : 0);
 
-        // Update local storage
         localStorage.setItem("cart", JSON.stringify(updatedCart));
 
         return { cart: updatedCart, itemCount: updatedItemCount };
@@ -49,13 +45,11 @@ const useCartStore = create((set) => {
           return { cart: updatedCart, itemCount: state.itemCount - 1 };
         }
 
-        // Update local storage
         localStorage.setItem("cart", JSON.stringify(updatedCart));
 
         return { cart: updatedCart, itemCount: state.itemCount };
       }),
     cleanAll: () => {
-      // Clear local storage
       localStorage.removeItem("cart");
       return { cart: [], itemCount: 0 };
     },

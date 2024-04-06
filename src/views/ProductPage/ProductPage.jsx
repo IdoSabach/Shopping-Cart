@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Items from "../../data/Items";
+import items from "../../data/Items";
 import useCartStore from "../../store/CardStore.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,7 +14,7 @@ const numberWithCommas = (number) => {
 const ProductPage = () => {
   const { cart } = useCartStore();
   const { id } = useParams();
-  const product = Items.find((item) => item.id === parseInt(id));
+  const product = items.find((item) => item.id === parseInt(id));
 
   const [quantity, setQuantity] = useState(1);
   const [isClick, setIsClick] = useState(false);

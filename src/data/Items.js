@@ -18,7 +18,7 @@ const rolexOrange = "/watch/rolex-orange.png"
 const rolexBlack = "/watch/rolex-black.png"
 const rolexLax = "/watch/rolex-lax.png"
 
-const Items = [
+const items = [
   // watch
   {
     id: 0,
@@ -218,19 +218,8 @@ const Items = [
     countForClient:0,
     filter:["All","Size 31","White Gold"],
   },
-
-  // {
-  //   id: 0,
-  //   image: shirt2,
-  //   title: "Men's Striped Polo Shirt",
-  //   type: "Shirts",
-  //   price: 39.99,
-  //   description: "Classic polo shirt with a striped design for men.",
-  //   features: ["Comfortable cotton fabric", "Regular fit", "Ribbed collar and cuffs"],
-  //   countForClient:0,
-  // },
   
 ];
 
 
-export default Items;
+export default items;
