@@ -1,7 +1,7 @@
 .menu {
-  /* Add properties for positioning and initial hidden state */
   position: fixed;
-  top: 0;
-  background-color: #fff; /* Adjust as per your design */
-  transition: 0.5s ease; /* Define transition effect for left property */
+  background-color: white;
+  z-index: 1000;
+  transition: 0.3s ease-in-out; 
+  overflow-y: auto;
 }
