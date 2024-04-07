@@ -15,6 +15,7 @@ export default function ShopPage() {
     setActiveButtonIndex(index);
     const filtered = items.filter((item) => item.filter.includes(filter));
     setFilteredItems(filtered);
+    setOpenFilterBox(false)
   };
 
   const handleOpenFilterBox = () => {
@@ -31,10 +32,10 @@ export default function ShopPage() {
         The Collection Rolex watches
       </section>
       <section className="flex flex-col items-center gap-2 mb-3 w-full lg:w-auto">
-        <div className="text-2xl font-bold flex w-full items-center justify-between gap-4">
+        <button className="text-2xl font-bold flex w-full items-center justify-between gap-4" onClick={handleOpenFilterBox}>
           <p>Sort by category</p>
 
-          <button onClick={handleOpenFilterBox}>
+          <button /*onClick={handleOpenFilterBox}*/>
             {openFilterBox ? (
               <img
                 src="/images/icons8-minus-50.png"
@@ -49,14 +50,14 @@ export default function ShopPage() {
               />
             )}
           </button>
-        </div>
+        </button>
         {openFilterBox ? (
           <div className="filters grid grid-cols-3 lg:grid-cols-5 gap-1 ">
             {arrFilters.map((type, index) => (
               <button
                 key={index}
-                className={`text-xl p-2 rounded-md bg-green-900 text-black active:scale-95  ${
-                  activeButtonIndex === index ? "text-white" : ""
+                className={`text-xl p-2 rounded-md bg-slate-100 text-black active:scale-95  ${
+                  activeButtonIndex === index ? "text-black font-extrabold" : ""
                 }`}
                 onClick={() => handleClick(type, index, type)}
               >

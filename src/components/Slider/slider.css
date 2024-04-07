@@ -6,6 +6,7 @@
   place-items: center;
   overflow: hidden;
   margin: 50px 0px 50px 0px;
+  border-style: none;
   
 }
 
@@ -13,6 +14,7 @@
   display: flex;
   width: calc(250px*18);
   animation: scroll 15s linear infinite ;
+  
 }
 
 
@@ -30,11 +32,13 @@
   align-items: center;
   /* margin: 4px; */
   perspective: 100px;
+  
 }
 
 .imag-slide{
   border-radius: 8px;
   transition: transform 0.5s;
+  
 }
 
 .imag-slide:hover{

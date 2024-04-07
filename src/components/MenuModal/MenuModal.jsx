@@ -31,7 +31,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
     ? "fixed inset-0 bg-black opacity-50 z-50"
     : "hidden";
   const modalClass = isOpen
-    ? "menu bg-white text-black fixed right-0 z-50 ml-16 h-full"
+    ? "menu bg-white text-black fixed right-0 z-50 ml-16 h-full w-11/12"
     : "hidden";
 
   return (
