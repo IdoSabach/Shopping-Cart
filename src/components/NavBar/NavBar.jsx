@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css"
 
-import PersonIcon from "/images/person.png";
 import ShoppingCardIcon from "/images/shopping-bag.png";
 import HomeIcon from "/images/home.png";
 import ShopIcon from "/images/shop.png";
 import useCartStore from "../../store/CardStore";
 import logoIcon from "/images/logoRolexIcon.png"
+import About from "/images/about.png"
 
 const NavBar = ({ isOpen }) => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -66,8 +66,8 @@ const NavBar = ({ isOpen }) => {
               </Link>
               <Link to="ContactPage">
                 <img
-                  src={PersonIcon}
-                  alt="Person"
+                  src={About}
+                  alt="About"
                   className="w-7 md:w-12 filter invert"
                 />
               </Link>

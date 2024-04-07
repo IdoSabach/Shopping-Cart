@@ -39,7 +39,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
       <div className={overlayClass} onClick={closeMenu}></div>
 
       <div className={modalClass}>
-        <div className="titleOfPage flex flex-col items-center">
+        <div className="titleOfPage flex flex-col items-center h-full ">
           {cart.length === 0 ? (
             <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16">
               <button
@@ -58,22 +58,25 @@ const MenuModal = ({ isOpen, closeMenu }) => {
               </Link>
             </section>
           ) : (
-            <div className="titleOfPage text-4xl lg:text-5xl flex flex-col items-center">
-              <div className="flex bg-white w-full sticky top-0 items-center justify-center">
-                <button
-                  onClick={closeMenu}
-                  className="btnClose text-4xl absolute left-0"
-                >
-                  <img src={closeBtn} alt="closeBtn" className="h-10" />
-                </button>
-                <div className="text-center">Your Items</div>
+            <div className="titleOfPage text-4xl lg:text-5xl flex flex-col items-center h-full justify-between">
+              <div>
+                <div className="flex bg-white w-full sticky top-0 items-center justify-center">
+                  <button
+                    onClick={closeMenu}
+                    className="btnClose text-4xl absolute left-0"
+                  >
+                    <img src={closeBtn} alt="closeBtn" className="h-10" />
+                  </button>
+                  <div className="text-center">Your Items</div>
+                </div>
+
+                <div>
+                  {cart.map((item, index) => (
+                    <ProductInCard {...item} key={index} />
+                  ))}
+                </div>
               </div>
 
-              <div>
-                {cart.map((item, index) => (
-                  <ProductInCard {...item} key={index} />
-                ))}
-              </div>
               <section className="sum flex items-center gap-4 p-4 bg-green-900 text-white justify-between w-full sticky bottom-0">
                 <div className="sum flex gap-6 text-lg lg:text-xl">
                   <div>Items: {totalItems}</div>
