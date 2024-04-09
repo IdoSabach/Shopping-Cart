@@ -66,7 +66,7 @@ const ProductPage = () => {
     if (newTotalQuantity < 3) {
       addToCart(product, quantity);
       notifySuccess();
-    } else if (newTotalQuantity == 3) {
+    } else if (newTotalQuantity === 3) {
       addToCart(product, quantity);
       notifySuccess();
       setIsClick(true);
