@@ -31,7 +31,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
     ? "fixed inset-0 bg-black opacity-50 z-50"
     : "hidden";
   const modalClass = isOpen
-    ? "menu bg-white text-black fixed right-0 z-50 ml-16 h-full w-11/12"
+    ? "menu bg-white text-black fixed right-0 z-50 ml-16 h-full w-11/12 lg:w-1/3"
     : "hidden";
 
   return (
@@ -41,7 +41,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
       <div className={modalClass}>
         <div className="titleOfPage flex flex-col items-center h-full ">
           {cart.length === 0 ? (
-            <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16">
+            <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16 ">
               <button
                 onClick={closeMenu}
                 className="btnClose text-4xl absolute left-0 top-0"
