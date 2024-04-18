@@ -4,4 +4,24 @@
   z-index: 1000;
   transition: 0.3s ease-in-out; 
   overflow-y: auto;
+  animation: animaToModal 0.5s ease-in-out;
+}
+
+@keyframes animaToModal{
+  0%{
+    transform: translateX(700px);
+    /* opacity: 0; */
+  }
+  100%{
+    transform: translateX(0px);
+    /* opacity: 1; */
+  }
+}
+
+.animaToModal {
+  animation: animaToModal 0.5s ease-in-out forwards;
+}
+
+.animaOutModal {
+  animation: animaOutModal 0.5s ease-in-out forwards;
 }
