@@ -13,15 +13,15 @@ const Router = () => {
       errorElement: <div>404 Not Found</div>,
     },
     {
-      path:'/shopPage',
+      path:'/shop',
       element: <ShopPage />
     },
     {
-      path:'/ContactPage',
+      path:'/Contact',
       element: <ContactPage />
     },
     {
-      path: '/item/:id',
+      path: '/shop/item/:id',
       element: <ProductPage />
     },
   ]);

@@ -50,7 +50,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
               </button>
               YOUR CART IS LOOKING EMPTY
               <Link
-                to="/shopPage"
+                to="/shop"
                 className="font-bold border border-green-900 animate-pulse rounded-xl p-2"
                 onClick={closeMenu}
               >

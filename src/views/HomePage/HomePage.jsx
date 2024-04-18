@@ -19,7 +19,7 @@ export default function HomePage() {
         Explore the Rolex collection
         </nav>
         <Link
-          to="/shopPage"
+          to="/shop"
           className="btn-shop p-3 text-lg bg-green-900 text-white rounded-3xl md:text-x active:scale-95"
         >
           Shop Now
@@ -48,7 +48,7 @@ export default function HomePage() {
       </section>
       <section className="mt-8">
       <Link
-          to="/shopPage"
+          to="/shop"
           className="btn-shop p-4 text-2xl bg-green-900 text-white rounded-3xl md:text-x active:scale-95"
         >
           Shop Now

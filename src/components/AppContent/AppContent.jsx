@@ -8,9 +8,9 @@ export default function AppContent() {
   return (
     <Routes>
       <Route exact path="/" element={<HomePage />} />
-      <Route path="/shopPage" element={<ShopPage />} />
-      <Route path="/contactPage" element={<ContactPage />} />
-      <Route path="/item/:id" element={<ProductPage />} />
+      <Route path="/shop" element={<ShopPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/shop/item/:id" element={<ProductPage />} />
     </Routes>
   );
 }
