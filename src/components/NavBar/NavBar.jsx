@@ -64,7 +64,7 @@ const NavBar = ({ isOpen }) => {
                   className="w-7 md:w-12 filter invert"
                 />
               </Link>
-              <Link to="Contact">
+              <Link to="contact">
                 <img
                   src={About}
                   alt="About"
@@ -90,7 +90,7 @@ const NavBar = ({ isOpen }) => {
               <Link to="shop" className={activeLink === "/shop" ? "active" : ""}>
                 <p>Shop</p>
               </Link>
-              <Link to="Contact" className={activeLink === "/Contact" ? "active" : ""}>
+              <Link to="contact" className={activeLink === "/contact" ? "active" : ""}>
                 <p>Contact Us</p>
               </Link>
               <button onClick={handleCardOpen} className="relative">

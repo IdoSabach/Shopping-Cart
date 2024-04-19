@@ -17,11 +17,11 @@ const Router = () => {
       element: <ShopPage />
     },
     {
-      path:'/Contact',
+      path:'/contact',
       element: <ContactPage />
     },
     {
-      path: '/shop/item/:id',
+      path: '/shop/:id',
       element: <ProductPage />
     },
   ]);

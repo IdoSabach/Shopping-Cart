@@ -18,10 +18,3 @@
   }
 }
 
-.animaToModal {
-  animation: animaToModal 0.5s ease-in-out forwards;
-}
-
-.animaOutModal {
-  animation: animaOutModal 0.5s ease-in-out forwards;
-}

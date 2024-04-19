@@ -10,7 +10,7 @@ export default function AppContent() {
       <Route exact path="/" element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/contact" element={<ContactPage />} />
-      <Route path="/shop/item/:id" element={<ProductPage />} />
+      <Route path="/shop/:id" element={<ProductPage />} />
     </Routes>
   );
 }
