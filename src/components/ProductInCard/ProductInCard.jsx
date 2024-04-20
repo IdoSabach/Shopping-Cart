@@ -63,18 +63,9 @@ const ProductInCard = ({ id, image, title, price, quantity }) => {
   };
 
   const handleAddToCart = () => {
-    const totalQuantityInCart = cart.reduce(
-      (total, item) => (item.id === id ? total + item.quantity : total),
-      0
-    );
     const newCount = countItem + 1;
-
-    if (totalQuantityInCart + 1 <= 3) {
-      addToCart({ id, image, title, price, quantity: newCount });
-      setCountItem(newCount);
-    } else {
-      notifyErrorMax();
-    }
+    addToCart({ id, image, title, price, quantity: newCount });
+    setCountItem(newCount);
   };
 
   return (
@@ -120,3 +111,20 @@ ProductInCard.propTypes = {
 };
 
 export default ProductInCard;
+
+// const handleAddToCart = () => {
+//   const totalQuantityInCart = cart.reduce(
+//     (total, item) => (item.id === id ? total + item.quantity : total),
+//     0
+//   );
+//   const newCount = countItem + 1;
+
+//   if (totalQuantityInCart + 1 <= 3) {
+//     addToCart({ id, image, title, price, quantity: newCount });
+//     setCountItem(newCount);
+//   } else {
+//     notifyErrorMax();
+//   }
+// };
+
+//Function to limit the amount of units to 3 with minus plus

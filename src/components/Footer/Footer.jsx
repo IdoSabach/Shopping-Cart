@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
-  const [helpISOpen, setHelpIsOpen] = useState(false);
-  const [companyISOpen, setCompanyIsOpen] = useState(false);
+  const [helpIsOpen, setHelpIsOpen] = useState(false);
+  const [companyIsOpen, setCompanyIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -17,12 +17,20 @@ export default function Footer() {
     };
   }, []);
 
+  const ifOpenHelp = helpIsOpen
+    ? "filter invert w-4 h-4 duration-150 rotate-180"
+    : "filter invert w-4 h-4 duration-150";
+
+  const ifOpenCompany = companyIsOpen
+    ? "filter invert w-4 h-4 duration-150 rotate-180"
+    : "filter invert w-4 h-4 duration-150";
+
   const handleHelpOpen = () => {
-    setHelpIsOpen(!helpISOpen);
+    setHelpIsOpen(!helpIsOpen);
   };
 
   const handleCompanyOpen = () => {
-    setCompanyIsOpen(!companyISOpen)
+    setCompanyIsOpen(!companyIsOpen);
   };
 
   return (
@@ -58,18 +66,17 @@ export default function Footer() {
           ) : (
             <div className=" flex flex-col gap-6">
               <div className="flex flex-col gap-3 text-gray-400">
-                <div className="flex items-center justify-between ">
+                <div className="flex items-center justify-between">
                   <Link className="font-bold text-white">HELP</Link>
-                  <button>
+                  <button onClick={handleHelpOpen}>
                     <img
-                      src="/images/icons8-plus-50.png"
+                      src="/images/icons8-down-50.png"
                       alt=""
-                      className="filter invert w-4 h-4 "
-                      onClick={handleHelpOpen}
+                      className={ifOpenHelp}
                     />
                   </button>
                 </div>
-                {helpISOpen ? (
+                {helpIsOpen && (
                   <div className="flex flex-col gap-3 text-gray-400">
                     <Link>Get Help</Link>
                     <Link>order Status</Link>
@@ -77,24 +84,21 @@ export default function Footer() {
                     <Link>Returns</Link>
                     <Link>Payment Options</Link>
                   </div>
-                ) : (
-                  ""
                 )}
               </div>
 
               <div className="flex flex-col gap-3 text-gray-400">
-                <div className="flex items-center justify-between ">
+                <div className="flex items-center justify-between">
                   <Link className="font-bold text-white">COMPANY</Link>
-                  <button>
+                  <button onClick={handleCompanyOpen}>
                     <img
-                      src="/images/icons8-plus-50.png"
+                      src="/images/icons8-down-50.png"
                       alt=""
-                      className="filter invert w-4 h-4 "
-                      onClick={handleCompanyOpen}
+                      className={ifOpenCompany}
                     />
                   </button>
                 </div>
-                {companyISOpen ? (
+                {companyIsOpen && (
                   <div className="flex flex-col gap-3 text-gray-400">
                     <Link>About Lorem ipsum</Link>
                     <Link>News</Link>
@@ -102,33 +106,37 @@ export default function Footer() {
                     <Link>Investors</Link>
                     <Link>Accessibility</Link>
                   </div>
-                ) : (
-                  ""
                 )}
               </div>
             </div>
           )}
-
         </div>
         <div className="filter invert flex gap-4">
-          <a href="https://www.facebook.com/">
+          <a href="https://github.com/IdoSabach/Shopping-Cart">
             <img
               src="/images/facebook.png"
               alt="facebook"
               className="w-10 h-10"
             />
           </a>
-          <a href="https://www.instagram.com/">
+          <a href="https://github.com/IdoSabach/Shopping-Cart">
             <img
               src="/images/instagram.png"
               alt="instagram"
               className="w-10 h-10"
             />
           </a>
-          <a href="https://twitter.com/">
+          <a href="https://github.com/IdoSabach/Shopping-Cart">
             <img
               src="/images/twitter.png"
               alt="Twitter"
+              className="w-10 h-10"
+            />
+          </a>
+          <a href="https://github.com/IdoSabach/Shopping-Cart">
+            <img
+              src="/images/icons8-github-50.png"
+              alt="Github"
               className="w-10 h-10"
             />
           </a>

@@ -2,9 +2,9 @@ import { useState } from "react";
 
 const text = [
   {
-    title: "Welcome to My Store - Your Ultimate Destination for Luxury Watches",
+    title: "Welcome to Luxury watch store - Your Ultimate Destination for Luxury Watches",
     description: [
-      "At My Store, we curate the epitome of elegance and precision in the world of timepieces. Founded with a passion for horology and a commitment to excellence, we are dedicated to bringing you the finest selection of luxury watches from renowned brands around the globe.",
+      "We're proud to be a part of a larger chain dedicated to bringing you the finest in luxury timepieces. Our branch, nestled among our chain's network of stores, stands as a beacon of elegance and precision in the world of horology."
     ],
   },
   {
@@ -47,8 +47,8 @@ export default function PersonPage() {
     setName("");
   };
   return (
-    <div className="contact flex flex-col p-8  justify-center items-center">
-      <div className="lg:w-3/5">
+    <div className="contact flex flex-col justify-center items-center lg:mt-12 mt-4">
+      <div className="lg:w-3/5 p-3">
         <section>
           {text.map((block, index) => (
             <div key={index} className="flex flex-col gap-3 mb-10">
@@ -76,7 +76,7 @@ export default function PersonPage() {
               placeholder="Your Name"
               value={name}
               onChange={handleName}
-              className="border border-black rounded-2xl p-1 "
+              className="border border-black rounded-2xl p-4"
             />
           </div>
 
@@ -87,13 +87,13 @@ export default function PersonPage() {
               placeholder="Your Message"
               value={message}
               onChange={handleMessage}
-              className="border border-black rounded-2xl p-1"
+              className="border border-black rounded-2xl p-4 h-40"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="btn border bg-green-900 w-1/3 rounded-xl text-white p-3 "
+            className="btn border bg-green-900 w-1/3 rounded-xl text-white p-3 active:scale-95 hover:scale-110 ease-in duration-200 "
             onClick={handlePrint}
           >
             Send

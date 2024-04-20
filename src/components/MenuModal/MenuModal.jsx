@@ -31,9 +31,9 @@ const MenuModal = ({ isOpen, closeMenu }) => {
     ? "fixed inset-0 bg-black opacity-50 z-50"
     : "hidden";
   const modalClass = isOpen
-    ? "menu bg-white text-black fixed right-0 z-50 ml-16 h-full w-11/12 lg:w-1/3"
+    ? "menu bg-white text-black fixed right-0 z-50 ml-8 h-full "
     : "hidden";
-
+    // w-11/12 lg:w-1/3
   return (
     <div>
       <div className={overlayClass} onClick={closeMenu}></div>

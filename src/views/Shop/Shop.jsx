@@ -15,7 +15,7 @@ export default function ShopPage() {
     setActiveButtonIndex(index);
     const filtered = items.filter((item) => item.filter.includes(filter));
     setFilteredItems(filtered);
-    setOpenFilterBox(false)
+    // setOpenFilterBox(false)
   };
 
   const handleOpenFilterBox = () => {

@@ -20,7 +20,7 @@ export default function HomePage() {
         </nav>
         <Link
           to="/shop"
-          className="btn-shop p-3 text-lg bg-green-900 text-white rounded-3xl md:text-x active:scale-95"
+          className="btn-shop p-3 text-lg bg-green-900 text-white rounded-3xl md:text-x active:scale-95 hover:scale-110 ease-in duration-200 "
         >
           Shop Now
         </Link>
@@ -46,14 +46,13 @@ export default function HomePage() {
         ))}
         
       </section>
-      <section className="mt-8">
       <Link
           to="/shop"
-          className="btn-shop p-4 text-2xl bg-green-900 text-white rounded-3xl md:text-x active:scale-95"
+          className="btn-shop p-4 text-2xl bg-green-900 text-white rounded-3xl md:text-x active:scale-95 hover:scale-110 lg:m-10 ease-in duration-200"
         >
           Shop Now
         </Link>
-      </section>
+
 
       <Slider />
     </div>

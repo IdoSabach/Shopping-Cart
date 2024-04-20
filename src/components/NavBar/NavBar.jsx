@@ -36,12 +36,12 @@ const NavBar = ({ isOpen }) => {
     setIdCardOpen(true);
     isOpen(isCardOpen);
   };
-
+  // lg:w-11/12
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <div className="sticky top-0 z-40">
-      <header className="header flex p-4 justify-between items-center text-white bg-gradient-to-r from-green-950 from-5% to-green-900 to-50%">
+    <div className="sticky top-0 z-40 w-full">
+      <header className="header flex p-4 justify-between items-center text-white bg-gradient-to-r from-green-950 from-5% to-green-900 to-50% lg:pr-12 lg:pl-12">
         <Link to="/" className="flex items-center">
           <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10"/>
           <div className="logo-block text-2xl lg:text-4xl tracking-wide">Rolex</div>
@@ -91,7 +91,7 @@ const NavBar = ({ isOpen }) => {
                 <p>Shop</p>
               </Link>
               <Link to="contact" className={activeLink === "/contact" ? "active" : ""}>
-                <p>Contact Us</p>
+                <p>Contact</p>
               </Link>
               <button onClick={handleCardOpen} className="relative">
                 <div className="flex items-center gap-2 text-white p-2 rounded-xl border">

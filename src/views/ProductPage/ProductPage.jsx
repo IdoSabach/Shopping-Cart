@@ -63,17 +63,19 @@ const ProductPage = () => {
   }
 
   const handleAddToCart = () => {
-    if (newTotalQuantity < 3) {
-      addToCart(product, quantity);
-      notifySuccess();
-    } else if (newTotalQuantity === 3) {
-      addToCart(product, quantity);
-      notifySuccess();
-      setIsClick(true);
-    } else {
-      setIsClick(true);
-      notifyError();
-    }
+    addToCart(product, quantity);
+    notifySuccess();
+    // if (newTotalQuantity < 3) {
+    //   addToCart(product, quantity);
+    //   notifySuccess();
+    // } else if (newTotalQuantity === 3) {
+    //   addToCart(product, quantity);
+    //   notifySuccess();
+    //   setIsClick(true);
+    // } else {
+    //   setIsClick(true);
+    //   notifyError();
+    // }
   };
 
   return (
