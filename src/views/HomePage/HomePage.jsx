@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Slider from "../../components/Slider/Slider.jsx";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-import SwiperApp from "../../components/Swiper/SwiperApp.jsx";
+import SwiperAppDown from "../../components/SwiperDown/SwiperAppDown.jsx";
+import SwiperAppUp from "../../components/SwiperUp/SwiperAppUp.jsx";
 import items from "../../data/Items.js";
 
 export default function HomePage() {
@@ -26,7 +27,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <SwiperApp />
+      <SwiperAppUp />
 
       <section className="text-2xl mt-8 mb-8 lg:mb-20 lg:mt-20 w-4/5 lg:w-2/3">
       The Rolex collection offers a wide range of prestigious, high-precision timepieces, from Professional to Classic models to suit any wrist
@@ -54,7 +55,8 @@ export default function HomePage() {
         </Link>
 
 
-      <Slider />
+      {/* <Slider /> */}
+      <SwiperAppDown />
     </div>
   );
 }
