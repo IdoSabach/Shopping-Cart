@@ -49,7 +49,7 @@ export default function HomePage() {
       </section>
       <Link
           to="/shop"
-          className="btn-shop p-4 text-2xl bg-green-900 text-white rounded-3xl md:text-x active:scale-95 hover:scale-110 lg:m-10 ease-in duration-200"
+          className="btn-shop p-4 text-2xl bg-green-900 text-white rounded-3xl md:text-x active:scale-95 hover:scale-110 lg:m-10 ease-in duration-200 mt-5"
         >
           Shop Now
         </Link>
