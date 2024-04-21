@@ -8,13 +8,13 @@ import "swiper/css/navigation";
 // import "./Swiper.css";
 
 const arrImage = [
-  "/public/imageForSlider/bg-blue.jpg",
-  "/public/imageForSlider/book.jpg",
-  "/public/imageForSlider/front.jpg",
-  "/public/imageForSlider/mini.jpg",
-  "/public/imageForSlider/office.jpg",
-  "/public/imageForSlider/right.jpg",
-  "/public/imageForSlider/watch.jpg",
+  "/imageForSlider/bg-blue.jpg",
+  "/imageForSlider/book.jpg",
+  "/imageForSlider/front.jpg",
+  "/imageForSlider/mini.jpg",
+  "/imageForSlider/office.jpg",
+  "/imageForSlider/right.jpg",
+  "/imageForSlider/watch.jpg",
 ];
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
