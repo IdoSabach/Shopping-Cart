@@ -36,14 +36,17 @@ const MenuModal = ({ isOpen, closeMenu }) => {
       <div className={modalClass}>
         <div className="titleOfPage flex flex-col items-center h-full ">
           {cart.length === 0 ? (
-            <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16 ">
+            <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16">
               <button
                 onClick={closeMenu}
                 className="btnClose text-4xl absolute left-0 top-0"
               >
                 <img src={closeBtn} alt="closeBtn" className="h-10" />
               </button>
+              <div className="w-80">
               YOUR CART IS LOOKING EMPTY
+              </div>
+              
               <Link
                 to="/shop"
                 className="font-bold border border-green-900 animate-pulse rounded-xl p-2"
