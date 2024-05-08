@@ -1,20 +1,40 @@
 .menu {
+  height: 100%;
+  margin-left: 32px;
+  right: 0;
   position: fixed;
   background-color: white;
   z-index: 1000;
-  transition: 0.3s ease-in-out; 
+  transition: 0.5s ; 
   overflow-y: auto;
-  animation: animaToModal 0.5s ease-in-out;
+
 }
 
-@keyframes animaToModal{
-  0%{
-    transform: translateX(700px);
-    /* opacity: 0; */
-  }
-  100%{
-    transform: translateX(0px);
-    /* opacity: 1; */
-  }
+.menuClose{
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  z-index: 1000;
+  right: -700px;
+  transition: 0.5s ; 
 }
+
+.overlayClassOpen {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.overlayClass {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0; 
+  transition: background-color 0.5s ease-in-out;
+}
+
+
 
