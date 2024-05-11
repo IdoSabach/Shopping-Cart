@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./NavBar.css"
+import "./NavBar.css";
 
 import ShoppingCardIcon from "/images/shopping-bag.png";
 import HomeIcon from "/images/home.png";
 import ShopIcon from "/images/shop.png";
 import useCartStore from "../../store/CardStore";
-import logoIcon from "/images/logoRolexIcon.png"
-import About from "/images/about.png"
+import logoIcon from "/images/logoRolexIcon.png";
+import About from "/images/about.png";
+import { motion } from "framer-motion";
 
 const NavBar = ({ isOpen }) => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isCardOpen, setIdCardOpen] = useState(false);
-  const [activeLink , setActiveLink] = useState("/")
+  const [activeLink, setActiveLink] = useState("/");
   const cart = useCartStore((state) => state.cart);
 
-  const location = useLocation()
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,8 +30,8 @@ const NavBar = ({ isOpen }) => {
   }, []);
 
   useEffect(() => {
-    setActiveLink(location.pathname)
-  },[location])
+    setActiveLink(location.pathname);
+  }, [location]);
 
   const handleCardOpen = () => {
     setIdCardOpen(true);
@@ -43,8 +44,12 @@ const NavBar = ({ isOpen }) => {
     <div className="sticky top-0 z-40 w-full">
       <header className="header flex p-4 justify-between items-center text-white bg-gradient-to-r from-green-950 from-5% to-green-900 to-50% lg:pr-12 lg:pl-12">
         <Link to="/" className="flex items-center">
-          <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10"/>
-          <div className="logo-block text-2xl lg:text-4xl tracking-wide">Rolex</div>
+          <motion.div className="flex" animate={{y:0}} initial={{y:-250}}>
+            <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10" />
+            <div className="logo-block text-2xl lg:text-4xl tracking-wide">
+              Rolex
+            </div>
+          </motion.div>
         </Link>
 
         <div>
@@ -87,10 +92,16 @@ const NavBar = ({ isOpen }) => {
               <Link to="/" className={activeLink === "/" ? "active" : ""}>
                 <p>Home</p>
               </Link>
-              <Link to="shop" className={activeLink === "/shop" ? "active" : ""}>
+              <Link
+                to="shop"
+                className={activeLink === "/shop" ? "active" : ""}
+              >
                 <p>Shop</p>
               </Link>
-              <Link to="contact" className={activeLink === "/contact" ? "active" : ""}>
+              <Link
+                to="contact"
+                className={activeLink === "/contact" ? "active" : ""}
+              >
                 <p>Contact</p>
               </Link>
               <button onClick={handleCardOpen} className="relative">

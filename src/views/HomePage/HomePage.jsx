@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import SwiperAppDown from "../../components/SwiperDown/SwiperAppDown.jsx";
 import SwiperAppUp from "../../components/SwiperUp/SwiperAppUp.jsx";
 import items from "../../data/Items.js";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   const displayedItems = items.slice(0, 3);
@@ -12,7 +13,7 @@ export default function HomePage() {
   };
   return (
     <div className="homePageDefault flex flex-col items-center gap-3 text-center ">
-      <section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8">
+      <motion.section className="sectionOne flex flex-col items-center gap-6 p-2 mt-8" animate={{opacity:[0,1]}}>
         <header className="text-xl rounded-3xl p-1 pr-4 pl-4 md:text-3xl border border-green-900">
           Welcome To Rolex.
         </header>
@@ -25,7 +26,7 @@ export default function HomePage() {
         >
           Shop Now
         </Link>
-      </section>
+      </motion.section>
 
       <SwiperAppUp />
 
