@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const text = [
   {
@@ -29,6 +30,16 @@ const text = [
     ],
   },
 ];
+
+const hoverBtn = {
+  hover:{
+    scale: 1.1,
+    transition: {
+      yoyo: Infinity,
+    },
+  },
+
+}
 
 export default function PersonPage() {
   const [message, setMessage] = useState("");
@@ -91,13 +102,16 @@ export default function PersonPage() {
             ></textarea>
           </div>
 
-          <button
+          <motion.button
             type="submit"
-            className="btn border bg-green-900 w-1/3 rounded-xl text-white p-3 active:scale-95 hover:scale-110 ease-in duration-200 "
+            className="btn border bg-green-900 w-1/3 rounded-xl text-white p-3 "
             onClick={handlePrint}
+            variants={hoverBtn}
+            whileHover="hover"
+            // className="btn border bg-green-900 w-1/3 rounded-xl text-white p-3 active:scale-95 hover:scale-110 ease-in duration-200 "
           >
             Send
-          </button>
+          </motion.button>
         </section>
       </div>
     </div>

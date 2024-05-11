@@ -48,7 +48,6 @@ const NavBar = ({ isOpen }) => {
             className="flex"
             animate={{ y: 0 }}
             initial={{ y: -250 }}
-            transition={{ duration: 1 }}
           >
             <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10" />
             <div className="logo-block text-2xl lg:text-4xl tracking-wide">

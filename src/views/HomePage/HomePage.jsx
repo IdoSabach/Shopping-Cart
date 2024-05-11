@@ -5,6 +5,7 @@ import SwiperAppDown from "../../components/SwiperDown/SwiperAppDown.jsx";
 import SwiperAppUp from "../../components/SwiperUp/SwiperAppUp.jsx";
 import items from "../../data/Items.js";
 import { motion } from "framer-motion";
+import "./HomePage.css"
 
 export default function HomePage() {
   const displayedItems = items.slice(0, 3);
@@ -17,7 +18,7 @@ export default function HomePage() {
         className="sectionOne flex flex-col items-center gap-6 p-2 mt-8"
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
-        transition={{duration:1}}
+         
       >
         <header className="text-xl rounded-3xl p-1 pr-4 pl-4 md:text-3xl border border-green-900">
           Welcome To Rolex.
@@ -35,7 +36,7 @@ export default function HomePage() {
 
       <SwiperAppUp />
 
-      <section className="text-2xl mt-8 mb-8 lg:mb-20 lg:mt-20 w-4/5 lg:w-2/3">
+      <section className=" paragraph text-2xl mt-8 mb-8 lg:mb-20 lg:mt-20 w-4/5 lg:w-2/3">
         The Rolex collection offers a wide range of prestigious, high-precision
         timepieces, from Professional to Classic models to suit any wrist
       </section>
@@ -44,7 +45,7 @@ export default function HomePage() {
         {displayedItems.map((item) => (
           <section
             key={item.id}
-            className="item flex flex-col lg:flex-row gap-6"
+            className="itemOnHome flex flex-col lg:flex-row gap-6"
           >
             <ProductCard
               id={item.id}

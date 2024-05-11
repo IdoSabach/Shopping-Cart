@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./MenuModal.css";
 import closeBtn from "/images/icons8-close-50.png";
 
+
 const MenuModal = ({ isOpen, closeMenu }) => {
   const { cart } = useCartStore();
 
@@ -30,7 +31,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
   const overlayClass = isOpen ? "overlayClassOpen" : "overlayClass";
   const modalClass = isOpen ? "menu text-black" : "menuClose";
   return (
-    <div>
+    <div >
       <div className={overlayClass} onClick={closeMenu}></div>
 
       <div className={modalClass}>
