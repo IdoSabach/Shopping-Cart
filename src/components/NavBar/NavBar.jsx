@@ -52,7 +52,7 @@ const NavBar = ({ isOpen }) => {
           </motion.div>
         </Link>
 
-        <div>
+        <motion.div animate={{y:0}} initial={{y:250}}>
           {!isDesktop ? (
             <div className="navForMobile flex flex-row gap-4 items-center">
               <Link to="/">
@@ -119,7 +119,7 @@ const NavBar = ({ isOpen }) => {
               </button>
             </div>
           )}
-        </div>
+        </motion.div>
       </header>
     </div>
   );
