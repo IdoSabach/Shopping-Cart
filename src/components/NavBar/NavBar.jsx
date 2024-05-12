@@ -46,8 +46,8 @@ const NavBar = ({ isOpen }) => {
         <Link to="/" className="flex items-center">
           <motion.div
             className="flex"
-            animate={{ y: 0 }}
-            initial={{ y: -250 }}
+            animate={{ y: 0}}
+          initial={{ y: -250}}
             // transition={{ duration: 0.3 }}
           >
             <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10" />
@@ -58,8 +58,8 @@ const NavBar = ({ isOpen }) => {
         </Link>
 
         <motion.div
-          animate={{ y: 0 }}
-          initial={{ y: 250 }}
+          animate={{ y: 0}}
+          initial={{y:180}}
           // transition={{ duration: 0.3 }}
         >
           {!isDesktop ? (
