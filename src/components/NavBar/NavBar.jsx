@@ -48,6 +48,7 @@ const NavBar = ({ isOpen }) => {
             className="flex"
             animate={{ y: 0 }}
             initial={{ y: -250 }}
+            transition={{ duration: 0.3 }}
           >
             <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10" />
             <div className="logo-block text-2xl lg:text-4xl tracking-wide">
@@ -56,7 +57,11 @@ const NavBar = ({ isOpen }) => {
           </motion.div>
         </Link>
 
-        <motion.div animate={{ y: 0 }} initial={{ y: 250 }}>
+        <motion.div
+          animate={{ y: 0 }}
+          initial={{ y: 250 }}
+          transition={{ duration: 0.3 }}
+        >
           {!isDesktop ? (
             <div className="navForMobile flex flex-row gap-4 items-center">
               <Link to="/">
