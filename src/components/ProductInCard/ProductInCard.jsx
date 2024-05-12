@@ -16,7 +16,6 @@ const notifyErrorMax = () =>
     draggable: true,
     progress: undefined,
     theme: "dark",
-    // transition: Bounce,
   });
 
 const notifyErrorMin = () =>
@@ -29,7 +28,6 @@ const notifyErrorMin = () =>
     draggable: true,
     progress: undefined,
     theme: "dark",
-    // transition: Bounce,
   });
 
 const numberWithCommas = (number) => {

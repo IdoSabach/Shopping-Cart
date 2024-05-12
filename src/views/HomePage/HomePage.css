@@ -1,15 +1,16 @@
-.itemOnHome, .paragraph{
+.itemOnHome,
+.paragraph {
   animation: animationToItems linear;
-  animation-timeline:view();
-  animation-range:entry cover 15% ;
+  animation-timeline: view();
+  animation-range: entry cover 15%;
 }
 
-@keyframes animationToItems{
-  from{
+@keyframes animationToItems {
+  from {
     opacity: 0;
     scale: 0.7;
   }
-  to{
+  to {
     opacity: 1;
   }
 }

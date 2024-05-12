@@ -1,9 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ShopPage from "./views/ShopPage/ShopPage"
-import ContactPage from "./views/ContactPage/ContactPage"
+import ShopPage from "./views/ShopPage/ShopPage";
+import ContactPage from "./views/ContactPage/ContactPage";
 import HomePage from "./views/HomePage/HomePage";
 import ProductPage from "./views/ProductPage/ProductPage";
-
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -13,16 +12,16 @@ const Router = () => {
       errorElement: <div>404 Not Found</div>,
     },
     {
-      path:'/shop',
-      element: <ShopPage />
+      path: "/shop",
+      element: <ShopPage />,
     },
     {
-      path:'/contact',
-      element: <ContactPage />
+      path: "/contact",
+      element: <ContactPage />,
     },
     {
-      path: '/shop/:id',
-      element: <ProductPage />
+      path: "/shop/:id",
+      element: <ProductPage />,
     },
   ]);
 

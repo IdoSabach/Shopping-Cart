@@ -33,7 +33,10 @@ export default function ShopPage() {
         The Collection Rolex watches
       </section>
       <section className="flex flex-col items-center gap-2 mb-3 w-full lg:w-auto">
-        <motion.button className="btnOfFilter text-2xl font-bold flex w-full items-center justify-between gap-4" onClick={handleOpenFilterBox}>
+        <motion.button
+          className="btnOfFilter text-2xl font-bold flex w-full items-center justify-between gap-4"
+          onClick={handleOpenFilterBox}
+        >
           <p>Sort by category</p>
 
           <button /*onClick={handleOpenFilterBox}*/>
@@ -65,7 +68,9 @@ export default function ShopPage() {
                 <button
                   key={index}
                   className={`text-xl p-2 rounded-md bg-slate-100 text-black active:scale-95  ${
-                    activeButtonIndex === index ? "text-black font-extrabold" : ""
+                    activeButtonIndex === index
+                      ? "text-black font-extrabold"
+                      : ""
                   }`}
                   onClick={() => handleClick(type, index, type)}
                 >
@@ -78,7 +83,10 @@ export default function ShopPage() {
       </section>
       <section className="sectionPro grid gap-6 lg:grid-cols-3">
         {filteredItems.map((item) => (
-          <section key={item.id} className=" paragraph item flex flex-col lg:flex-row gap-6">
+          <section
+            key={item.id}
+            className=" paragraph item flex flex-col lg:flex-row gap-6"
+          >
             <ProductCard
               id={item.id}
               image={item.image}

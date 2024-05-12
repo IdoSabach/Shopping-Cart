@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 
 const text = [
   {
-    title: "Welcome to Luxury watch store - Your Ultimate Destination for Luxury Watches",
+    title:
+      "Welcome to Luxury watch store - Your Ultimate Destination for Luxury Watches",
     description: [
-      "We're proud to be a part of a larger chain dedicated to bringing you the finest in luxury timepieces. Our branch, nestled among our chain's network of stores, stands as a beacon of elegance and precision in the world of horology."
+      "We're proud to be a part of a larger chain dedicated to bringing you the finest in luxury timepieces. Our branch, nestled among our chain's network of stores, stands as a beacon of elegance and precision in the world of horology.",
     ],
   },
   {
@@ -32,14 +33,13 @@ const text = [
 ];
 
 const hoverBtn = {
-  hover:{
+  hover: {
     scale: 1.1,
     transition: {
       yoyo: Infinity,
     },
   },
-
-}
+};
 
 export default function PersonPage() {
   const [message, setMessage] = useState("");

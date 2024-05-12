@@ -2,14 +2,19 @@ import { create } from "zustand";
 
 const useCartStore = create((set) => {
   const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  const itemCount = storedCart.reduce((total, item) => total + item.quantity, 0);
+  const itemCount = storedCart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return {
     cart: storedCart,
     itemCount,
     addToCart: (product, quantity = 1) =>
       set((state) => {
-        const existingIndex = state.cart.findIndex((item) => item.id === product.id);
+        const existingIndex = state.cart.findIndex(
+          (item) => item.id === product.id
+        );
         const updatedCart = [...state.cart];
         let updatedItemCount = state.itemCount;
 
@@ -27,9 +32,14 @@ const useCartStore = create((set) => {
       }),
     removeFromCart: (productId) =>
       set((state) => {
-        const removedItem = state.cart.find((product) => product.id === productId);
-        const updatedCart = state.cart.filter((product) => product.id !== productId);
-        const updatedItemCount = state.itemCount - (removedItem ? removedItem.quantity : 0);
+        const removedItem = state.cart.find(
+          (product) => product.id === productId
+        );
+        const updatedCart = state.cart.filter(
+          (product) => product.id !== productId
+        );
+        const updatedItemCount =
+          state.itemCount - (removedItem ? removedItem.quantity : 0);
 
         localStorage.setItem("cart", JSON.stringify(updatedCart));
 
@@ -38,7 +48,9 @@ const useCartStore = create((set) => {
     decrementQuantity: (productId) =>
       set((state) => {
         const updatedCart = [...state.cart];
-        const existingIndex = updatedCart.findIndex((item) => item.id === productId);
+        const existingIndex = updatedCart.findIndex(
+          (item) => item.id === productId
+        );
 
         if (existingIndex !== -1 && updatedCart[existingIndex].quantity > 1) {
           updatedCart[existingIndex].quantity -= 1;

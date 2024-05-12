@@ -21,16 +21,15 @@ const ProductPage = () => {
   const { addToCart } = useCartStore();
 
   const totalQuantityOfProductInCart = cart
-      .filter((item) => item.id === product.id)
-      .reduce((total, item) => total + item.quantity, 0);
-    const newTotalQuantity = totalQuantityOfProductInCart + quantity;
+    .filter((item) => item.id === product.id)
+    .reduce((total, item) => total + item.quantity, 0);
+  const newTotalQuantity = totalQuantityOfProductInCart + quantity;
 
-    useEffect(() => {
-      if(newTotalQuantity < 4){
-        setIsClick(false)
-      }
-      
-    }, [newTotalQuantity]);
+  useEffect(() => {
+    if (newTotalQuantity < 4) {
+      setIsClick(false);
+    }
+  }, [newTotalQuantity]);
 
   const notifySuccess = () =>
     toast.success(`${product.title} Added to your cart`, {
@@ -105,7 +104,9 @@ const ProductPage = () => {
           </ul>
 
           <div className="flex justify-between items-center">
-            <p className="text-2xl lg:text-3xl font-bold">${numberWithCommas(product.price)}</p>
+            <p className="text-2xl lg:text-3xl font-bold">
+              ${numberWithCommas(product.price)}
+            </p>
             <select
               name=""
               id=""
