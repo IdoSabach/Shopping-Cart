@@ -1,22 +1,35 @@
 .menu {
   height: 100%;
-  margin-left: 32px;
-  right: 0;
+  width: 0;
   position: fixed;
+  top: 0;
+  right: 0;
   background-color: white;
   z-index: 1000;
-  transition: 0.5s;
-  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.5s, right 0.5s;
+}
+
+.menuOpen {
+  width: 85%; /* Adjust this value as per your design */
+  right: 0;
 }
 
 .menuClose {
-  position: fixed;
-  background-color: white;
-  height: 100%;
-  z-index: 1000;
-  right: -700px;
-  transition: 0.5s;
+  width: 0;
+  right: -300px; /* Same value as menuOpen width but negative */
 }
+
+@media (min-width: 768px) {
+  .menuOpen {
+    width: 33%; /* Adjusted width for medium screens */
+  }
+
+  .menuClose {
+    right: -250px; /* Same value as menuOpen width but negative */
+  }
+}
+
 
 .overlayClassOpen {
   background-color: rgba(0, 0, 0, 0.5);

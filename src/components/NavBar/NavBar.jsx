@@ -44,24 +44,15 @@ const NavBar = ({ isOpen }) => {
     <div className="sticky top-0 z-40 w-full">
       <header className="header flex p-4 justify-between items-center text-white bg-gradient-to-r from-green-950 from-5% to-green-900 to-50% lg:pr-12 lg:pl-12">
         <Link to="/" className="flex items-center">
-          <motion.div
-            className="flex"
-            animate={{ y: 0 }}
-            initial={{ y: -250 }}
-            // transition={{ duration: 0.3 }}
-          >
+          <div className="flex">
             <img src={logoIcon} alt="logoIcon" className="h-7 lg:h-10" />
             <div className="logo-block text-2xl lg:text-4xl tracking-wide">
               Rolex
             </div>
-          </motion.div>
+          </div>
         </Link>
 
-        <motion.div
-          animate={{ y: 0 }}
-          initial={{ y: 180 }}
-          // transition={{ duration: 0.3 }}
-        >
+        <div>
           {!isDesktop ? (
             <div className="navForMobile flex flex-row gap-4 items-center">
               <Link to="/">
@@ -128,7 +119,7 @@ const NavBar = ({ isOpen }) => {
               </button>
             </div>
           )}
-        </motion.div>
+        </div>
       </header>
     </div>
   );

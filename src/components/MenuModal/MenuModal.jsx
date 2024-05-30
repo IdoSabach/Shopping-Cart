@@ -28,13 +28,14 @@ const MenuModal = ({ isOpen, closeMenu }) => {
   }, [isOpen]);
 
   const overlayClass = isOpen ? "overlayClassOpen" : "overlayClass";
-  const modalClass = isOpen ? "menu text-black" : "menuClose";
+  const modalClass = isOpen ? "menu menuOpen" : "menu menuClose";
+
   return (
     <div>
       <div className={overlayClass} onClick={closeMenu}></div>
 
       <div className={modalClass}>
-        <div className="titleOfPage flex flex-col items-center h-full ">
+        <div className="titleOfPage flex flex-col items-center h-full visible">
           {cart.length === 0 ? (
             <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16">
               <button
