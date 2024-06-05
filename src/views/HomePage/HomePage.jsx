@@ -20,7 +20,7 @@ export default function HomePage() {
         initial={{ opacity: 0 }}
       >
         <header className="text-xl rounded-3xl p-1 pr-4 pl-4 md:text-3xl border border-green-900">
-          Welcome To Rolex.
+          Welcome To Rolex
         </header>
         <nav className="subHeader text-2xl md:text-4xl">
           Explore the Rolex collection

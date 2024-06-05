@@ -22,7 +22,7 @@
 
 @media (min-width: 768px) {
   .menuOpen {
-    width: 33%; /* Adjusted width for medium screens */
+    width: 40%; /* Adjusted width for medium screens */
   }
 
   .menuClose {
