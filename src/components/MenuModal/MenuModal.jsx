@@ -35,7 +35,7 @@ const MenuModal = ({ isOpen, closeMenu }) => {
       <div className={overlayClass} onClick={closeMenu}></div>
 
       <div className={modalClass}>
-        <div className="titleOfPage flex flex-col items-center h-full visible">
+        <div className="titleOfPage flex flex-col items-center h-full visible pt-2">
           {cart.length === 0 ? (
             <section className="text-4xl p-4 flex flex-col text-center gap-6 mt-16">
               <button

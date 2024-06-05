@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ProductCard = ({ image, title, type, price, id }) => {
   return (
-    <div className="allCard text-left p-4 rounded-xl border border-gray-800 duration-300 hover:scale-105 mt-5 shadow-md">
+    <div className="allCard text-left p-4 rounded-xl border border-gray-800 duration-300 lg:hover:scale-105 mt-5 shadow-md">
       <Link key={id} to={`/shop/${id}`} className="re relative">
         <img
           src={image}
