@@ -11,7 +11,7 @@
 }
 
 .menuOpen {
-  width: 90%; /* Adjust this value as per your design */
+  width: 550px;
   right: 0;
 }
 
@@ -20,13 +20,13 @@
   right: -300px; /* Same value as menuOpen width but negative */
 }
 
-@media (min-width: 768px) {
+@media (max-width: 600px) {
   .menuOpen {
-    width: 40%; /* Adjusted width for medium screens */
+    width: 90%; /* Adjusted width for medium screens */
   }
 
   .menuClose {
-    right: -250px; /* Same value as menuOpen width but negative */
+    right: -300px; /* Same value as menuOpen width but negative */
   }
 }
 
